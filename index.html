@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Genshin Impact – Step Into a Vast Magical World of Adventure
+	</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Eqnoxx">
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<style type="text/css">
+		<!--
+		A { text-decoration: none}
+		-->
+	</style>
+	<style>
+		* {
+			font-family: Helvetica;
+		}
+		body {
+			position: relative;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			min-width: 1280px;
+			max-width: 1900px;
+			margin: auto;
+		}
+		#loading {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: black;
+			opacity: 1;
+			transition: all 0.3s;
+			z-index: 3000;
+		}
+		#fab {
+			position: relative;
+			width: 100%;
+			background: url(background/main/main.jpg) center top no-repeat;
+		}
+		#bottom {
+			position: relative;
+			width: 100%;
+			height: 400px;
+			background: black;
+		}
+		#fab header {
+			position: relative;
+			width: 100%;
+			height: 1082px;
+		}
+		#fab content {
+			position: relative;
+			width: 100%;
+			height: auto;
+		}
+		#fab footer {
+			position: relative;
+			width: 100%;
+			height: 340px;
+		}
+		#fab header .logo {
+			position: absolute;
+			width: 211px;
+			height: 200px;			
+			top: 4px;
+			left: 57px;
+			background: url(element/main/head/logo.png) center top no-repeat;
+		}
+		#fab header .bar1 {
+			position: absolute;
+			width: 191px;
+			height: 52px;
+			top: 56px;
+			right: 276px;
+			opacity: 0.7;
+			transition: all 0.3s;
+			background: url(element/main/head/bar1.png) center top no-repeat;
+		}
+		#fab header .bar2 {
+			position: absolute;
+			width: 191px;
+			height: 52px;
+			top: 56px;
+			right: 66px;
+			opacity: 0.7;
+			transition: all 0.3s;
+			background: url(element/main/head/bar2.png) center top no-repeat;
+		}
+		#fab header .video {
+			position: absolute;
+			width: 511px;
+			height: 106px;
+			top: 598px;
+			left: 50%;
+			transform: translateX(-50%);
+			cursor: pointer;
+			background: url(element/main/head/header-button.png) center top no-repeat;
+		}
+		#fab header .title {
+			position: absolute;
+			width: 971px;
+			height: 258px;
+			top: 675px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: url(element/main/head/header-title.png) center top no-repeat;
+		}
+		
+		#fab content .c-i {
+			position: relative;
+			width: 100%;
+			height: 1140px;
+			overflow: hidden;
+			background: url(element/main/c-i/c-i.png) center top no-repeat;
+		}
+		.c-i .slide {
+			position: relative;
+			width: 10000px;
+			height: 1140px;
+			transition: left 1s;
+		}
+		.c-i .desc-frame {
+			position: relative;
+			width: 520px;
+			height: 700px;
+    		top: 370px;
+    		left: 100px;
+    		text-align: left;
+		}
+		.c-i .desc-frame .name {
+			position: relative;
+			width: auto;
+			height: 113px;
+			z-index: 998;
+		}
+		.c-i .desc-frame .desc {
+			position: relative;
+			width: 330px;
+			height: 90px;
+			top: 35px;
+			font-size: 22px;
+			color: #147E85;
+			text-align: left;
+			line-height: 30px;
+			z-index: 998;
+		}
+		.c-i .desc-frame .video {
+			position: relative;
+		    width: 358px;
+		    height: 208px;
+		    top: 120px;
+			cursor: pointer;
+			z-index: 1000;
+		}
+		.c-i .desc-frame .view-more { 
+			position: relative;
+    		top: 145px;
+			font-size: 16px;
+			font-weight: 800;
+			color: #147E85;
+			text-align: left;
+			line-height: 24px;
+			z-index: 1000;
+		}
+		.c-i .pic {
+			position: absolute;
+			width: 1210px;
+			height: auto;
+			top: 0;
+			right: 0;
+			z-index: 997;
+		}
+
+		.c-i .roles {
+			position: relative;
+			float: left;
+			width: 100%;
+			height: 1140px;
+		}
+		.c-i .slide-button-left, .c-i .slide-button-right {
+			position: relative;
+			float: left;
+			width: 50%;
+			height: 1050px;
+			top: -950px;
+			left: 0px;
+			z-index: 999;
+		}
+
+		#fab content .v-i {
+			position: relative;
+			width: 100%;
+			height: 1140px;
+			background: url(element/main/v-i/v-i.png) center top no-repeat;
+		}
+		.v-i .frame {
+			position: relative;
+			width: 100%;
+			max-width: 1580px;
+			height: 700px;
+			top: 300px;
+			margin-left: 50%;
+			transform: translateX(-50%);
+		}
+		.v-i .visual {
+			position: relative;
+			padding-top: 20px;
+			width: 1357px;
+			height: 100%;
+			margin: auto;
+			overflow: hidden;
+		}
+		.v-i .slide {
+			position: relative;
+			width: 10000px;
+			height: 700px;
+			transition: left 0.5s;
+		}
+		.v-i .pics {
+			position: relative;
+			margin: 0 8px;
+			width: 431px;
+			display: block;
+			float: left;
+			top: 0;
+			transition: top 0.5s;
+		}
+		.v-i .pics:first-child {
+			margin-left: 16px;
+		}
+		.v-i .slide-button-left {
+			position: absolute;
+			width: 110px;
+			height: 83px;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			cursor: pointer;
+			background: url(element/main/v-i/pre.png) center top no-repeat;
+			z-index: 1000;
+		}
+		.v-i .slide-button-right {
+			position: absolute;
+			width: 110px;
+			height: 83px;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			cursor: pointer;
+			background: url(element/main/v-i/nxt.png) center top no-repeat;
+			z-index: 1000;
+		}
+		
+		#fab content .g-f {
+			position: relative;
+			width: 100%;
+			height: 1140px;
+			background: url(element/main/g-f/g-f.png) center top no-repeat;
+		}
+		.g-f .frame {
+			position: relative;
+			width: 1180px;
+			height: 800px;
+			top: 290px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.g-f .frame .pics {
+			transition: all 0.5s;
+		}
+		.g-f .pic-left {
+			position: absolute;
+			width: 700px;
+			height: 366.33px;
+			top: 25px;
+			left: 0;
+			z-index: 999;
+			filter: brightness(0.5);
+		}
+		.g-f .pic-mid {
+			position: absolute;
+			width: 800px;
+			height: 418.67px;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 1000;
+		}
+		.g-f .pic-right {
+			position: absolute;
+			width: 700px;
+			height: 366.33px;
+			top: 25px;
+			left: 100%;
+			transform: translateX(-100%);
+			z-index: 999;
+			filter: brightness(0.5);
+		}
+		.g-f .pic-back {
+			position: absolute;
+			width: 700px;
+			height: 366.33px;
+			top: 25px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 998;
+		}
+		.g-f #pic1 {
+			background: url(element/main/g-f/1.png);
+		}
+		.g-f #pic2 {
+			background: url(element/main/g-f/2.png);
+		}
+		.g-f #pic3 {
+			background: url(element/main/g-f/3.png);
+		}
+		.g-f #pic4 {
+			background: url(element/main/g-f/4.png);
+		}
+		.g-f #pic5 {
+			background: url(element/main/g-f/5.png);
+		}
+		.g-f .slide-button-left {
+			position: absolute;
+			width: 48px;
+			height: 48px;
+			top: 480px;
+			left: 435px;
+			cursor: pointer;
+			background: url(element/main/g-f/pre.png) center top no-repeat;
+		}
+		.g-f .slide-button-right {
+			position: absolute;
+			width: 48px;
+			height: 48px;
+			top: 480px;
+			right: 435px;
+			cursor: pointer;
+			background: url(element/main/g-f/nxt.png) center top no-repeat;
+		}
+		.g-f .point-frame {
+			position: absolute;
+			width: 170px;
+			height: 30px;
+			top: 490px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.g-f .page-point {
+			position: relative;
+			width: 19px;
+			height: 19px;
+			padding: 7px;
+			float: left;
+			cursor: pointer;
+			background: url(element/main/g-f/p1.png) center top no-repeat;
+		}
+		#fab footer .pic {
+			position:absolute;
+			width: 300px;
+			height: 100px;
+			top: 70px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: url(element/main/g-f/last-version.png) center top no-repeat;
+			opacity: 0.8;
+		}
+		#fab footer .desc {
+			position:absolute;
+			top: 150px;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 20px;
+			color: white;
+			opacity: 0.8;
+		}
+		#fab footer .last-version {
+			transition: all 0.3s;
+		}
+
+		#bottom .bottom-frame {
+			position: relative;
+			width: 100%;
+			max-width: 1140px;
+			min-width: 800px;
+			height: 400px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		#bottom .logo-frame {
+			position: absolute;
+			width: 420px;
+			height: 100px;
+			top: 150px;
+			left: 80px;
+		}
+		#bottom .mihoyo {
+			position: absolute;
+			width: 200px;
+			height: 100px;
+			top: 21px;
+			left: 0;
+			background: url(element/main/bottom/logo.png) center top no-repeat;
+		}
+		#bottom .line {
+			position: absolute;
+			width: 3px;
+			height: 80px;
+			top: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: gray;
+		}
+		#bottom .genshin {
+			position: absolute;
+			width: 200px;
+			height: 100px;
+			right: 0;
+			background: url(element/main/bottom/logo2.png) center top no-repeat;
+		}
+		#bottom .author {
+			position: absolute;
+			width: 570px;
+			height: 180px;
+			top: 120px;
+			right: 0;
+		}
+		#bottom .nick-name-chn {
+			position: absolute;
+			width: 300px;
+			height: 125px;
+			top: 13px;
+			background: url(element/main/bottom/nick-name-chn.png) center top no-repeat;
+		}
+		#bottom .nick-name-eng {
+			position: absolute;
+			width: 300px;
+			height: 80px;
+			top: 29.5px;
+			left: 265px;
+			background: url(element/main/bottom/nick-name-eng.png) center top no-repeat;
+		}
+		#bottom .line2 {
+			position: absolute;
+			width: 399px;
+			height: 2px;
+			top: 78px;
+			left: 118px;
+			background: white;
+		}
+		#bottom .real-name {
+			position: absolute;
+			top: 110px;
+			left: 176px;
+			font-size: 22px;
+			color: white;
+		}
+
+		.video-back {
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.7);
+			z-index: 2000;
+		}
+		.video-frame {
+			position: fixed;
+			width: 896px;
+			height: 504px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2001;
+		}
+		.video-frame iframe {
+			width: 100%;
+			height: 100%;
+		}
+		.video-frame button {
+			position: absolute;
+			width: 32px;
+			height: 32px;
+			top: 10px;
+			right: -62px;
+			opacity: 0.75;
+			border: 0;
+			font-size: 0;
+			background: url(element/main/close.png) center top no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div id="loading"></div>
+	<div id="fab">
+
+		<!--header-->
+		<header>
+
+			<!--bars-->
+			<a href="https://ys.mihoyo.com"><div class="logo"></div></a>
+			<a href="official-site"><div class="bar1"></div></a>
+			<a href="download"><div class="bar2"></div></a>
+			<!--bars-->
+
+			<!--elements-->
+			<div class="video"></div>
+			<div class="title"></div>
+			<!--elements-->
+
+		</header>
+		<!--header-->
+
+		<!--content-->
+		<content>
+
+			<!--c-i-->
+			<div class="c-i">
+				<div class="slide" style="left: 0px;">
+					<!--venti-->
+					<div class="roles" id="venti">
+						<div class="desc-frame">
+							<img src="element/main/c-i/venti-name.png" class="name">
+							<div class="desc">
+								One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.
+							</div>
+							<img src="element/main/c-i/venti-video.png" class="video">
+							<div class="view-more">View more &gt;</div>
+						</div>
+						<img src="element/main/c-i/venti-pic.png" class="pic">
+					</div>
+					<!--venti-->
+					<!--rosaria-->
+					<div class="roles" id="rosaria">
+						<div class="desc-frame">
+							<img src="element/main/c-i/rosaria-name.png" class="name">
+							<div class="desc">
+								A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone.
+							</div>
+							<img src="element/main/c-i/rosaria-video.png" class="video">
+							<div class="view-more">View more &gt;</div>
+						</div>
+						<img src="element/main/c-i/rosaria-pic.png" class="pic">
+					</div>
+					<!--rosaria-->
+					<!--tartaglia-->
+					<div class="roles" id="tartaglia">
+						<div class="desc-frame">
+							<img src="element/main/c-i/tartaglia-name.png" class="name">
+							<div class="desc">
+								No. 11 of The Harbingers, also known as "Childe." His name is highly feared on the battlefield.
+							</div>
+							<img src="element/main/c-i/tartaglia-video.png" class="video">
+							<div class="view-more">View more &gt;</div>
+						</div>
+						<img src="element/main/c-i/tartaglia-pic.png" class="pic">
+					</div>
+					<!--tartaglia-->
+				</div>
+				<div class="slide-button-left"></div>
+				<div class="slide-button-right"></div>
+			</div>
+			<!--c-i-->
+
+			<!--v-i-->
+			<div class="v-i">
+				<div class="frame">
+					<div class="visual">
+						<div class="slide" style="left: 0px;">
+							<img src="element/main/v-i/mas.png" class="pics">
+							<img src="element/main/v-i/efpe.png" class="pics">
+							<img src="element/main/v-i/wo.png" class="pics">
+							<img src="element/main/v-i/OG.png" class="pics">
+							<img src="element/main/v-i/TVSE.png" class="pics">
+							<img src="element/main/v-i/BB.png" class="pics">
+							<img src="element/main/v-i/BoB.png" class="pics">
+							<img src="element/main/v-i/FF.png" class="pics">
+							<img src="element/main/v-i/PW.png" class="pics">
+							<img src="element/main/v-i/CT.png" class="pics">
+							<img src="element/main/v-i/WD.png" class="pics">
+							<img src="element/main/v-i/MM.png" class="pics">
+						</div>
+					</div>
+					<div class="slide-button-left"></div>
+					<div class="slide-button-right"></div>
+				</div>
+			</div>
+			<!--v-i-->
+
+
+			<div class="g-f">
+				<div class="frame">
+
+					<div class="pics pic-left" id="pic1"></div>
+					<div class="pics pic-mid" id="pic2"></div>
+					<div class="pics pic-right" id="pic3"></div>
+					<div class="pics pic-back" id="pic4"></div>
+					<div class="pics pic-back" id="pic5"></div>
+
+					<div class="slide-button-left"></div>
+					<div class="point-frame">
+						<div class="page-point" id="p1"></div>
+						<div class="page-point" id="p2"></div>
+						<div class="page-point" id="p3"></div>
+						<div class="page-point" id="p4"></div>
+						<div class="page-point" id="p5"></div>
+					</div>
+					<div class="slide-button-right"></div>
+				</div>
+			</div>
+
+		</content>
+		<!--content-->
+
+		<!--footer-->
+		<footer>
+			<a href="vesion-1-2.html">
+				<div class="last-version pic"></div>
+				<div class="last-version desc">
+					the Link to V1.2
+				</div>
+			</a>
+		</footer>
+		<!--footer-->
+	</div>
+
+	<div id="bottom">
+		<div class="bottom-frame">
+			<div class="logo-frame">
+				<div class="mihoyo"></div>
+				<div class="line"></div>
+				<div class="genshin"></div>
+			</div>
+			<div class="author">
+				<div class="nick-name-chn"></div>
+				<div class="nick-name-eng"></div>
+				<div class="line2"></div>
+				<div class="real-name">计智20H1范若筠&nbsp;&nbsp;&nbsp;作品</div>
+			</div>
+		</div>
+	</div>
+
+	<!--videos-->
+	<div class="video-back" style="display: none">
+		<div class="video-frame">
+			<button>关闭</button>
+
+			<!--version-pv-->
+			<iframe src="https://player.bilibili.com/player.html?aid=501949022&bvid=BV1kN41197kT&cid=306272844&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" id="video-1" style="display: none;"></iframe>
+			<!--version-pv-->
+
+			<!--venti-->
+			<iframe src="https://player.bilibili.com/player.html?aid=627236039&bvid=BV1st4y1q7V4&cid=238833609&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" id="video-2" style="display: none;"></iframe>
+			<!--venti-->
+
+			<!--rosaria-->
+			<iframe src="https://player.bilibili.com/player.html?aid=459828777&bvid=BV1a5411w7Yz&cid=316848436&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" id="video-3" style="display: none;"></iframe>
+			<!--rosaria-->
+
+			<!--tartaglia-->
+			<iframe src="https://player.bilibili.com/player.html?aid=800223974&bvid=BV1wy4y1z7f3&cid=254153809&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" id="video-4" style="display: none;"></iframe>
+			<!--tartaglia-->
+
+		</div>
+	</div>
+	<!--videos-->
+
+	<!--js-->
+	<script type="text/javascript">
+		function sleep(time){
+ 			return new Promise((resolve) => setTimeout(resolve, time));
+		}
+
+		//loading
+		$("#loading").css("z-index", 0);
+		$("#loading").css("opacity", 0);
+		//loading
+
+		//bars
+		$("#fab header a div").mouseenter(function() {
+			$(this).css("opacity", 1);
+		});
+		$("#fab header a div").mouseleave(function() {
+			$(this).css("opacity", 0.7);
+		});
+		//bars
+
+		//resize
+		var pos_ci = 0, pos_vi = 0;
+		$(window).resize(function() {
+			var width = $("body").width();
+			$(".roles").css("width", width);
+			$(".slide").css("left", -pos_ci*width+"px");
+
+		});
+		$(".roles").css("width", $("body").width());
+		//resize
+
+		//c-i-slide
+		$(".c-i .slide-button-left").click(function() {
+			slide_ci(-1);
+		});
+		$(".c-i .slide-button-right").click(function() {
+			slide_ci(+1);
+		});
+		var slide_ci = function(delta) {
+			pos_ci += delta;
+			var width = $("body").width();
+			var count = $(".roles").length;
+			if (pos_ci > count - 1) {
+				pos_ci = 0;
+			}
+			if (pos_ci < 0) {
+				pos_ci = count - 1;
+			}
+			$(".c-i .slide").css("left", -pos_ci*width + "px");
+		};
+		//c-i-slide
+
+		//v-i-slide
+		$(".v-i .slide-button-left").click(function() {
+			slide_vi(-1);
+		});
+		$(".v-i .slide-button-right").click(function() {
+			slide_vi(+1);
+		});
+		var slide_vi = function(delta) {
+			pos_vi += delta;
+			var old_width = parseInt($(".v-i .pics").css("width").slice(0, -2));
+			var width = old_width + 16;
+			var count = $(".v-i .pics").length;
+			if (pos_vi > count - 3) {
+				pos_vi = 0;
+			}
+			if (pos_vi < 0) {
+				pos_vi = count - 3;
+			}
+			$(".v-i .slide").css("left", -pos_vi*width + "px");
+		};
+		//v-i-slide
+
+		//move-top
+		$(".v-i .pics").mouseenter(function() {
+			$(this).css("top", "-20px");
+		});
+		$(".v-i .pics").mouseleave(function() {
+			$(this).css("top", "0px");
+		});
+		//move-top
+
+		//g-f-slide
+		var index = 1;
+		var all = $(".g-f .frame .pics");
+		var len = all.length;
+		function slide_move(target) {
+			target = (target+len) % len;
+			var right_index = (target + 1) % len;
+			var left_index = (target-1+len) % len;
+			var right = all.filter(":eq("+right_index+")");
+			var mid = all.filter(":eq("+target+")");
+			var left = all.filter(":eq("+left_index+")");
+
+			all.each(function() {
+				var self = $(this);
+				if (self.is(left)) {
+					self.attr("class", "pics pic-left");
+				}
+				else if (self.is(mid)) {
+					self.attr("class", "pics pic-mid");
+				}
+				else if (self.is(right)) {
+					self.attr("class", "pics pic-right");
+				}
+				else {
+					self.attr("class", "pics pic-back");
+				}
+			});
+			index = target;
+		}
+		$(".g-f .slide-button-left").click(function() {
+			slide_move(index-1);
+		});
+		$(".g-f .slide-button-right").click(function() {
+			slide_move(index+1);
+		});
+		//g-f-slide
+
+		//page-point
+		$(".g-f .page-point").mouseenter(function() {
+			$(this).css("background", "url(element/main/g-f/p2.png) center top no-repeat")
+		});
+		$(".g-f .page-point").mouseleave(function() {
+			$(this).css("background", "url(element/main/g-f/p1.png) center top no-repeat")
+		});
+		$(".g-f .page-point").click(async function() {
+			var delta = $(this).index() - index;
+			if (Math.abs(delta) >= len/2) {
+				delta = (delta>0?-1:1)*len + delta;
+			}
+			var step = Math.abs(delta)/delta;
+			if (delta == 0) return;
+			while (delta != 0) {
+				slide_move(index + step);
+				await sleep(300);
+				delta -= step;
+			}
+		});
+		//page-point
+
+		//last-version
+		$(".last-version").mouseenter(function() {
+			$(".last-version").css("opacity", 1);
+		});
+		$(".last-version").mouseleave(function() {
+			$(".last-version").css("opacity", 0.8);
+		});
+		//last-version
+
+		//videos
+		//video-1
+		$("#fab header .video").click(function(){
+			$(".video-back").show();
+			$(".video-back #video-1").show();
+			$("body").css("overflow", "hidden");
+		});
+		//video-2
+		$("#fab content .c-i #venti .video").click(function(){
+			$(".video-back").show();
+			$(".video-back #video-2").show();
+			$("body").css("overflow", "hidden");
+		});
+		//video-3
+		$("#fab content .c-i #rosaria .video").click(function(){
+			$(".video-back").show();
+			$(".video-back #video-3").show();
+			$("body").css("overflow", "hidden");
+		});
+		//video-4
+		$("#fab content .c-i #tartaglia .video").click(function(){
+			$(".video-back").show();
+			$(".video-back #video-4").show();
+			$("body").css("overflow", "hidden");
+		});
+		//close
+		$(".video-back button").click(function(){
+			$(".video-back iframe").hide();
+			$(".video-back").hide();
+			$("body").css("overflow", "auto");
+		});
+		//videos
+	</script>  
+	<!--js-->
+
+
+</body>
+</html>
