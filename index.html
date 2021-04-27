@@ -273,42 +273,37 @@
 		.g-f .frame .pics {
 			transition: all 0.5s;
 		}
-		.g-f .pic-left {
+		.g-f .pics {
 			position: absolute;
 			width: 700px;
-			height: 366.33px;
-			top: 25px;
-			left: 0;
+			height: 370px;
+			top: 27px;
 			z-index: 999;
 			filter: brightness(0.5);
 		}
-		.g-f .pic-mid {
-			position: absolute;
+		.g-f .pic-front {
 			width: 800px;
-			height: 418.67px;
+			height: 426px;
 			top: 0;
 			left: 50%;
 			transform: translateX(-50%);
 			z-index: 1000;
+			filter: none;
+		}
+		.g-f .pic-left {
+			left: 0;
 		}
 		.g-f .pic-right {
-			position: absolute;
-			width: 700px;
-			height: 366.33px;
-			top: 25px;
 			left: 100%;
 			transform: translateX(-100%);
-			z-index: 999;
-			filter: brightness(0.5);
 		}
 		.g-f .pic-back {
-			position: absolute;
-			width: 700px;
-			height: 366.33px;
-			top: 25px;
 			left: 50%;
 			transform: translateX(-50%);
 			z-index: 998;
+		}
+		.g-f div[id^="pic"] {
+			background: center top no-repeat;
 		}
 		.g-f #pic1 {
 			background: url(element/main/g-f/1.png);
@@ -325,24 +320,22 @@
 		.g-f #pic5 {
 			background: url(element/main/g-f/5.png);
 		}
-		.g-f .slide-button-left {
+		.g-f div[class^="slide-button-"] {
 			position: absolute;
 			width: 48px;
 			height: 48px;
 			top: 480px;
-			left: 435px;
 			cursor: pointer;
+		}
+		.g-f .slide-button-left {
+			left: 435px;
 			background: url(element/main/g-f/pre.png) center top no-repeat;
 		}
 		.g-f .slide-button-right {
-			position: absolute;
-			width: 48px;
-			height: 48px;
-			top: 480px;
 			right: 435px;
-			cursor: pointer;
 			background: url(element/main/g-f/nxt.png) center top no-repeat;
 		}
+		
 		.g-f .point-frame {
 			position: absolute;
 			width: 170px;
@@ -598,7 +591,7 @@
 				<div class="frame">
 
 					<div class="pics pic-left" id="pic1"></div>
-					<div class="pics pic-mid" id="pic2"></div>
+					<div class="pics pic-front" id="pic2"></div>
 					<div class="pics pic-right" id="pic3"></div>
 					<div class="pics pic-back" id="pic4"></div>
 					<div class="pics pic-back" id="pic5"></div>
@@ -763,7 +756,7 @@
 			var right_index = (target + 1) % len;
 			var left_index = (target-1+len) % len;
 			var right = all.filter(":eq("+right_index+")");
-			var mid = all.filter(":eq("+target+")");
+			var front = all.filter(":eq("+target+")");
 			var left = all.filter(":eq("+left_index+")");
 
 			all.each(function() {
@@ -771,8 +764,8 @@
 				if (self.is(left)) {
 					self.attr("class", "pics pic-left");
 				}
-				else if (self.is(mid)) {
-					self.attr("class", "pics pic-mid");
+				else if (self.is(front)) {
+					self.attr("class", "pics pic-front");
 				}
 				else if (self.is(right)) {
 					self.attr("class", "pics pic-right");
