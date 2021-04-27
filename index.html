@@ -7,487 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Eqnoxx">
 	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
-	<style type="text/css">
-		<!--
-		A { text-decoration: none}
-		-->
-	</style>
-	<style>
-		* {
-			font-family: Helvetica;
-		}
-		body {
-			position: relative;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			min-width: 1280px;
-			max-width: 1900px;
-			margin: auto;
-		}
-		#loading {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: black;
-			opacity: 1;
-			transition: all 0.3s;
-			z-index: 3000;
-		}
-		#fab {
-			position: relative;
-			width: 100%;
-			background: url(background/main/main.jpg) center top no-repeat;
-		}
-		#bottom {
-			position: relative;
-			width: 100%;
-			height: 400px;
-			background: black;
-		}
-		#fab header {
-			position: relative;
-			width: 100%;
-			height: 1082px;
-		}
-		#fab content {
-			position: relative;
-			width: 100%;
-			height: auto;
-		}
-		#fab footer {
-			position: relative;
-			width: 100%;
-			height: 340px;
-		}
-		#fab header .logo {
-			position: absolute;
-			width: 211px;
-			height: 200px;			
-			top: 4px;
-			left: 57px;
-			background: url(element/main/head/logo.png) center top no-repeat;
-		}
-		#fab header .bar1 {
-			position: absolute;
-			width: 191px;
-			height: 52px;
-			top: 56px;
-			right: 276px;
-			opacity: 0.7;
-			transition: all 0.3s;
-			background: url(element/main/head/bar1.png) center top no-repeat;
-		}
-		#fab header .bar2 {
-			position: absolute;
-			width: 191px;
-			height: 52px;
-			top: 56px;
-			right: 66px;
-			opacity: 0.7;
-			transition: all 0.3s;
-			background: url(element/main/head/bar2.png) center top no-repeat;
-		}
-		#fab header .video {
-			position: absolute;
-			width: 511px;
-			height: 106px;
-			top: 598px;
-			left: 50%;
-			transform: translateX(-50%);
-			cursor: pointer;
-			background: url(element/main/head/header-button.png) center top no-repeat;
-		}
-		#fab header .title {
-			position: absolute;
-			width: 971px;
-			height: 258px;
-			top: 675px;
-			left: 50%;
-			transform: translateX(-50%);
-			background: url(element/main/head/header-title.png) center top no-repeat;
-		}
-		
-		#fab content .c-i {
-			position: relative;
-			width: 100%;
-			height: 1140px;
-			overflow: hidden;
-			background: url(element/main/c-i/c-i.png) center top no-repeat;
-		}
-		.c-i .slide {
-			position: relative;
-			width: 10000px;
-			height: 1140px;
-			transition: left 1s;
-		}
-		.c-i .desc-frame {
-			position: relative;
-			width: 520px;
-			height: 700px;
-    		top: 370px;
-    		left: 100px;
-    		text-align: left;
-		}
-		.c-i .desc-frame .name {
-			position: relative;
-			width: auto;
-			height: 113px;
-			z-index: 998;
-		}
-		.c-i .desc-frame .desc {
-			position: relative;
-			width: 330px;
-			height: 90px;
-			top: 35px;
-			font-size: 22px;
-			color: #147E85;
-			text-align: left;
-			line-height: 30px;
-			z-index: 998;
-		}
-		.c-i .desc-frame .video {
-			position: relative;
-		    width: 358px;
-		    height: 208px;
-		    top: 120px;
-			cursor: pointer;
-			z-index: 1000;
-		}
-		.c-i .desc-frame .view-more { 
-			position: relative;
-    		top: 145px;
-			font-size: 16px;
-			font-weight: 800;
-			color: #147E85;
-			text-align: left;
-			line-height: 24px;
-			z-index: 1000;
-		}
-		.c-i .pic {
-			position: absolute;
-			width: 1210px;
-			height: auto;
-			top: 0;
-			right: 0;
-			z-index: 997;
-		}
-
-		.c-i .roles {
-			position: relative;
-			float: left;
-			width: 100%;
-			height: 1140px;
-		}
-		.c-i .slide-button-left, .c-i .slide-button-right {
-			position: relative;
-			float: left;
-			width: 50%;
-			height: 1050px;
-			top: -950px;
-			left: 0px;
-			z-index: 999;
-		}
-
-		#fab content .v-i {
-			position: relative;
-			width: 100%;
-			height: 1140px;
-			background: url(element/main/v-i/v-i.png) center top no-repeat;
-		}
-		.v-i .frame {
-			position: relative;
-			width: 100%;
-			max-width: 1580px;
-			height: 700px;
-			top: 300px;
-			margin-left: 50%;
-			transform: translateX(-50%);
-		}
-		.v-i .visual {
-			position: relative;
-			padding-top: 20px;
-			width: 1357px;
-			height: 100%;
-			margin: auto;
-			overflow: hidden;
-		}
-		.v-i .slide {
-			position: relative;
-			width: 10000px;
-			height: 700px;
-			transition: left 0.5s;
-		}
-		.v-i .pics {
-			position: relative;
-			margin: 0 8px;
-			width: 431px;
-			display: block;
-			float: left;
-			top: 0;
-			transition: top 0.5s;
-		}
-		.v-i .pics:first-child {
-			margin-left: 16px;
-		}
-		.v-i .slide-button-left {
-			position: absolute;
-			width: 110px;
-			height: 83px;
-			top: 50%;
-			left: 0;
-			transform: translateY(-50%);
-			cursor: pointer;
-			background: url(element/main/v-i/pre.png) center top no-repeat;
-			z-index: 1000;
-		}
-		.v-i .slide-button-right {
-			position: absolute;
-			width: 110px;
-			height: 83px;
-			top: 50%;
-			right: 0;
-			transform: translateY(-50%);
-			cursor: pointer;
-			background: url(element/main/v-i/nxt.png) center top no-repeat;
-			z-index: 1000;
-		}
-		
-		#fab content .g-f {
-			position: relative;
-			width: 100%;
-			height: 1140px;
-			background: url(element/main/g-f/g-f.png) center top no-repeat;
-		}
-		.g-f .frame {
-			position: relative;
-			width: 1180px;
-			height: 800px;
-			top: 290px;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-		.g-f .frame .pics {
-			transition: all 0.5s;
-		}
-		.g-f .pics {
-			position: absolute;
-			width: 700px;
-			height: 370px;
-			top: 27px;
-			z-index: 999;
-			filter: brightness(0.5);
-		}
-		.g-f .pic-front {
-			width: 800px;
-			height: 426px;
-			top: 0;
-			left: 50%;
-			transform: translateX(-50%);
-			z-index: 1000;
-			filter: none;
-		}
-		.g-f .pic-left {
-			left: 0;
-		}
-		.g-f .pic-right {
-			left: 100%;
-			transform: translateX(-100%);
-		}
-		.g-f .pic-back {
-			left: 50%;
-			transform: translateX(-50%);
-			z-index: 998;
-		}
-		.g-f div[id^="pic"] {
-			background: center top no-repeat;
-		}
-		.g-f #pic1 {
-			background: url(element/main/g-f/1.png);
-		}
-		.g-f #pic2 {
-			background: url(element/main/g-f/2.png);
-		}
-		.g-f #pic3 {
-			background: url(element/main/g-f/3.png);
-		}
-		.g-f #pic4 {
-			background: url(element/main/g-f/4.png);
-		}
-		.g-f #pic5 {
-			background: url(element/main/g-f/5.png);
-		}
-		.g-f div[class^="slide-button-"] {
-			position: absolute;
-			width: 48px;
-			height: 48px;
-			top: 480px;
-			cursor: pointer;
-		}
-		.g-f .slide-button-left {
-			left: 435px;
-			background: url(element/main/g-f/pre.png) center top no-repeat;
-		}
-		.g-f .slide-button-right {
-			right: 435px;
-			background: url(element/main/g-f/nxt.png) center top no-repeat;
-		}
-		
-		.g-f .point-frame {
-			position: absolute;
-			width: 170px;
-			height: 30px;
-			top: 490px;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-		.g-f .page-point {
-			position: relative;
-			width: 19px;
-			height: 19px;
-			padding: 7px;
-			float: left;
-			cursor: pointer;
-			background: url(element/main/g-f/p1.png) center top no-repeat;
-		}
-		#fab footer .pic {
-			position:absolute;
-			width: 300px;
-			height: 100px;
-			top: 70px;
-			left: 50%;
-			transform: translateX(-50%);
-			background: url(element/main/g-f/last-version.png) center top no-repeat;
-			opacity: 0.8;
-		}
-		#fab footer .desc {
-			position:absolute;
-			top: 150px;
-			left: 50%;
-			transform: translateX(-50%);
-			font-size: 20px;
-			color: white;
-			opacity: 0.8;
-		}
-		#fab footer .last-version {
-			transition: all 0.3s;
-		}
-
-		#bottom .bottom-frame {
-			position: relative;
-			width: 100%;
-			max-width: 1140px;
-			min-width: 800px;
-			height: 400px;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-		#bottom .logo-frame {
-			position: absolute;
-			width: 420px;
-			height: 100px;
-			top: 150px;
-			left: 80px;
-		}
-		#bottom .mihoyo {
-			position: absolute;
-			width: 200px;
-			height: 100px;
-			top: 21px;
-			left: 0;
-			background: url(element/main/bottom/logo.png) center top no-repeat;
-		}
-		#bottom .line {
-			position: absolute;
-			width: 3px;
-			height: 80px;
-			top: 10px;
-			left: 50%;
-			transform: translateX(-50%);
-			background: gray;
-		}
-		#bottom .genshin {
-			position: absolute;
-			width: 200px;
-			height: 100px;
-			right: 0;
-			background: url(element/main/bottom/logo2.png) center top no-repeat;
-		}
-		#bottom .author {
-			position: absolute;
-			width: 570px;
-			height: 180px;
-			top: 120px;
-			right: 0;
-		}
-		#bottom .nick-name-chn {
-			position: absolute;
-			width: 300px;
-			height: 125px;
-			top: 13px;
-			background: url(element/main/bottom/nick-name-chn.png) center top no-repeat;
-		}
-		#bottom .nick-name-eng {
-			position: absolute;
-			width: 300px;
-			height: 80px;
-			top: 29.5px;
-			left: 265px;
-			background: url(element/main/bottom/nick-name-eng.png) center top no-repeat;
-		}
-		#bottom .line2 {
-			position: absolute;
-			width: 399px;
-			height: 2px;
-			top: 78px;
-			left: 118px;
-			background: white;
-		}
-		#bottom .real-name {
-			position: absolute;
-			top: 110px;
-			left: 176px;
-			font-size: 22px;
-			color: white;
-		}
-
-		.video-back {
-			position: fixed;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			background: rgba(0, 0, 0, 0.7);
-			z-index: 2000;
-		}
-		.video-frame {
-			position: fixed;
-			width: 896px;
-			height: 504px;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			z-index: 2001;
-		}
-		.video-frame iframe {
-			width: 100%;
-			height: 100%;
-		}
-		.video-frame button {
-			position: absolute;
-			width: 32px;
-			height: 32px;
-			top: 10px;
-			right: -62px;
-			opacity: 0.75;
-			border: 0;
-			font-size: 0;
-			background: url(element/main/close.png) center top no-repeat;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 	<div id="loading"></div>
@@ -498,8 +18,8 @@
 
 			<!--bars-->
 			<a href="https://ys.mihoyo.com"><div class="logo"></div></a>
-			<a href="official-site"><div class="bar1"></div></a>
-			<a href="download"><div class="bar2"></div></a>
+			<a href="official-site.html"><div class="bars bar1"></div></a>
+			<a href="download.html"><div class="bars bar2"></div></a>
 			<!--bars-->
 
 			<!--elements-->
@@ -549,15 +69,19 @@
 							<div class="desc">
 								No. 11 of The Harbingers, also known as "Childe." His name is highly feared on the battlefield.
 							</div>
+							
 							<img src="element/main/c-i/tartaglia-video.png" class="video">
+							<!--
+							<div style="background-image: url(element/main/c-i/tartaglia-video.png)" class="video">
+							-->
 							<div class="view-more">View more &gt;</div>
 						</div>
 						<img src="element/main/c-i/tartaglia-pic.png" class="pic">
 					</div>
 					<!--tartaglia-->
 				</div>
-				<div class="slide-button-left"></div>
-				<div class="slide-button-right"></div>
+				<div class="slide-button slide-button-left"></div>
+				<div class="slide-button slide-button-right"></div>
 			</div>
 			<!--c-i-->
 
@@ -580,8 +104,8 @@
 							<img src="element/main/v-i/MM.png" class="pics">
 						</div>
 					</div>
-					<div class="slide-button-left"></div>
-					<div class="slide-button-right"></div>
+					<div class="slide-button slide-button-left"></div>
+					<div class="slide-button slide-button-right"></div>
 				</div>
 			</div>
 			<!--v-i-->
@@ -596,7 +120,7 @@
 					<div class="pics pic-back" id="pic4"></div>
 					<div class="pics pic-back" id="pic5"></div>
 
-					<div class="slide-button-left"></div>
+					<div class="slide-button slide-button-left"></div>
 					<div class="point-frame">
 						<div class="page-point" id="p1"></div>
 						<div class="page-point" id="p2"></div>
@@ -604,7 +128,7 @@
 						<div class="page-point" id="p4"></div>
 						<div class="page-point" id="p5"></div>
 					</div>
-					<div class="slide-button-right"></div>
+					<div class="slide-button slide-button-right"></div>
 				</div>
 			</div>
 
@@ -614,9 +138,9 @@
 		<!--footer-->
 		<footer>
 			<a href="vesion-1-2.html">
-				<div class="last-version pic"></div>
-				<div class="last-version desc">
-					the Link to V1.2
+				<div class="pic"></div>
+				<div class="desc">
+						the Link to V1.2
 				</div>
 			</a>
 		</footer>
@@ -675,15 +199,6 @@
 		$("#loading").css("opacity", 0);
 		//loading
 
-		//bars
-		$("#fab header a div").mouseenter(function() {
-			$(this).css("opacity", 1);
-		});
-		$("#fab header a div").mouseleave(function() {
-			$(this).css("opacity", 0.7);
-		});
-		//bars
-
 		//resize
 		var pos_ci = 0, pos_vi = 0;
 		$(window).resize(function() {
@@ -738,15 +253,6 @@
 		};
 		//v-i-slide
 
-		//move-top
-		$(".v-i .pics").mouseenter(function() {
-			$(this).css("top", "-20px");
-		});
-		$(".v-i .pics").mouseleave(function() {
-			$(this).css("top", "0px");
-		});
-		//move-top
-
 		//g-f-slide
 		var index = 1;
 		var all = $(".g-f .frame .pics");
@@ -785,12 +291,6 @@
 		//g-f-slide
 
 		//page-point
-		$(".g-f .page-point").mouseenter(function() {
-			$(this).css("background", "url(element/main/g-f/p2.png) center top no-repeat")
-		});
-		$(".g-f .page-point").mouseleave(function() {
-			$(this).css("background", "url(element/main/g-f/p1.png) center top no-repeat")
-		});
 		$(".g-f .page-point").click(async function() {
 			var delta = $(this).index() - index;
 			if (Math.abs(delta) >= len/2) {
@@ -805,15 +305,6 @@
 			}
 		});
 		//page-point
-
-		//last-version
-		$(".last-version").mouseenter(function() {
-			$(".last-version").css("opacity", 1);
-		});
-		$(".last-version").mouseleave(function() {
-			$(".last-version").css("opacity", 0.8);
-		});
-		//last-version
 
 		//videos
 		//video-1
