@@ -18,6 +18,7 @@
 		body {
 			position: absolute;
 			width: 100%;
+			min-width: 1280px;
 			height: 100%;
 			top: 0;
 			left: 0;
@@ -46,13 +47,12 @@
 			z-index: 2900;
 		}
 		#bar * {
-			z-index: 2901;
 			background: center top no-repeat;
 			background-size: cover;
+			z-index: 2901;
 		}
 		#bar > * {
 			position: absolute;
-			top: 0;
 		}
 		#bar .music {
 			width: 30px;
@@ -68,50 +68,32 @@
 			left: 28px;
 			background-image: url(element/download/bar/logo.png);
 		}
-		#bar a {
-			color: #fff;
-			font-size: 14px;
+		#bar .float_frame {
+			left: 331px;
 		}
-		#bar > a {
+		.float_frame a {
+			float: left;
 			color: #ccc;
-			text-align: center;
+			font-size: 14px;
 			height: 66px;
+			text-align: center;
 			line-height: 66px;
+			padding: 0;
 			margin: 0 15px !important;
-			transition: 0.3s;
+			transition: 0.2s;
 		}
-		#bar > a:hover {
+		.float_frame a:hover {
 			text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
     		color: #fff;
 		}
-		#bar .home {
-			left: 331px;
-		}
-		#bar .news {
-			left: 403px;
-		}
-		#bar .characters {
-			left: 475px;
-		}
-		#bar .explore {
-			left: 601.3px;
-		}
-		#bar .more {
-			left: 715.5px;
-		}
-		#bar .after {
-			height: auto;
-			top: 30.3px;
-		    border-top: 5px solid #ccc;
+		.float_frame .select::after {
+			content: '';
+			border-top: 5px solid #ccc;
 		    border-left: 4.5px solid transparent;
 		    border-right: 4.5px solid transparent;
+			margin: 3px 0 3px 10px;
+			display: inline-block;
 		    cursor: auto;
-		}
-		#bar .after_explore {
-			left: 676.7px;
-		}
-		#bar .after_more {
-			left: 756px;
 		}
 		#bar ul {
 			list-style-type: none;
@@ -119,8 +101,11 @@
 			padding: 0;
 			top: 50px;
 		    background-color: #272626;
-		    opacity: 1;
+		    opacity: 0;
 		    transition: 0.2s;
+		}
+		#bar ul:hover {
+			opacity: 0.9;	/* FIXME */
 		}
 		#bar .expl_menu {
 			left: 596.5px;
@@ -133,9 +118,12 @@
 			width: 214px;
     		height: 63px;
 		}
-		.expl_menu .about_game {
-		}
-		.expl_menu .teyvat {
+		#bar li a {
+			display: block;
+			text-align: left;
+			color: #fff;
+			line-height: 63px;
+			padding-left: 10px;
 		}
 		header {
 			position: relative;
@@ -160,11 +148,14 @@
 	<div id="bar">
 		<div class="music"></div>
 		<div class="logo"></div>
-		<a href="home.html" class="home">HOME</a>
-		<a href="news.html" class="news">NEWS</a>
-		<a href="characters.html" class="characters">CHARACTERS</a>
-		<a herf="#" class="explore">EXPLORE</a>
-		<a href="#" class="after after_explore"></a>
+		<div class="float_frame">
+			<a href="home.html">HOME</a>
+			<a href="news.html">NEWS</a>
+			<a href="characters.html">CHARACTERS</a>
+			<a herf="#" class="select explore">EXPLORE</a>
+			<a herf="#" class="select more">More</a>
+		</div>
+
 		<ul class="expl_menu">
 			<li class="about_game"><a href="about_game.html">
 					ABOUT GAME
@@ -179,8 +170,6 @@
 					MANGA
 			</a></li>
 		</ul>
-		<a href="#" class="more">More</a>
-		<a href="#" class="after after_more"></a>
 		<ul class="more_menu">
 			<li><a href="forums.html" class="forums">
 					FORUMS
@@ -192,6 +181,7 @@
 					REDEEM CODE
 			</a></li>
 		</ul>
+
 	</div>
 	<header>
 		
@@ -221,26 +211,18 @@
 		//scroll
 
 		//menu
-		/*$(".explore").mouseenter(function() {
+		$(".explore").mouseenter(function() {
 			$(".expl_menu").css("opacity", 0.9);
-			$(".expl_menu").css("color", "#fff");
-			$(".after_explore").css("border-top-color", "#fff");
 		});
 		$(".explore").mouseleave(function() {
 			$(".expl_menu").css("opacity", 0);
-			$(".expl_menu").css("color", "#ccc");
-			$(".after_explore").css("border-top-color", "#ccc");
 		});
 		$(".more").mouseenter(function() {
 			$(".more_menu").css("opacity", 0.9);
-			$(".more_menu").css("color", "#fff");
-			$(".after_more").css("border-top-color", "#fff");
 		});
 		$(".more").mouseleave(function() {
 			$(".more_menu").css("opacity", 0);
-			$(".more_menu").css("color", "#ccc");
-			$(".after_more").css("border-top-color", "#ccc");
-		});*/
+		});
 		//menu
 	</script>
 </body>
