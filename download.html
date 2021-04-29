@@ -8,7 +8,6 @@
 	<meta name="author" content="Eqnoxx">
 	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
 
-
 	<style type="text/css">
 		* {
 			font-family: Helvetica;
@@ -46,63 +45,103 @@
 			background: rgba(17,17,17,0.75);
 			z-index: 2900;
 		}
-		#bar .music {
+		#bar * {
+			z-index: 2901;
+			background: center top no-repeat;
+			background-size: cover;
+		}
+		#bar > * {
 			position: absolute;
+			top: 0;
+		}
+		#bar .music {
 			width: 30px;
 			height: 30px;
 			top: 18px;
 			left: 70px;
 			cursor: pointer;
-			z-index: 2901;
-			background: url(element/download/bar/music.png) center top no-repeat;
-			background-size: cover;
+			background-image: url(element/download/bar/music.png);
 		}
 		#bar .logo {
-			position: absolute;
 			width: 362px;
 			height: 66px;
-			top: 0;
-			left: 30px;
-			background: url(element/download/bar/logo.png) center top no-repeat;
-			background-size: cover;
+			left: 28px;
+			background-image: url(element/download/bar/logo.png);
+		}
+		#bar a {
+			color: #fff;
+			font-size: 14px;
+		}
+		#bar > a {
+			color: #ccc;
+			text-align: center;
+			height: 66px;
+			line-height: 66px;
+			margin: 0 15px !important;
+			transition: 0.3s;
+		}
+		#bar > a:hover {
+			text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+    		color: #fff;
 		}
 		#bar .home {
-
+			left: 331px;
 		}
 		#bar .news {
-
+			left: 403px;
 		}
 		#bar .characters {
-
+			left: 475px;
 		}
-		#bar .explore_select {
-
+		#bar .explore {
+			left: 601.3px;
 		}
-		.explore_select .explore_text {
-
+		#bar .more {
+			left: 715.5px;
 		}
-		.explore_select .menu {
-
+		#bar .after {
+			height: auto;
+			top: 30.3px;
+		    border-top: 5px solid #ccc;
+		    border-left: 4.5px solid transparent;
+		    border-right: 4.5px solid transparent;
+		    cursor: auto;
 		}
-		.explore_select .about_game {
-			
+		#bar .after_explore {
+			left: 676.7px;
 		}
-		.explore_select .teyvat {
-			
+		#bar .after_more {
+			left: 756px;
 		}
-		.explore_select .itinerary {
-			
+		#bar ul {
+			list-style-type: none;
+			border-radius: 1px;
+			padding: 0;
+			top: 50px;
+		    background-color: #272626;
+		    opacity: 1;
+		    transition: 0.2s;
 		}
-		.explore_select .manga {
-			
+		#bar .expl_menu {
+			left: 596.5px;
 		}
-		#bar .more_select {
-			
+		#bar .more_menu {
+			left: 710px;
+		}
+		#bar li {
+			position: relative;
+			width: 214px;
+    		height: 63px;
+		}
+		.expl_menu .about_game {
+		}
+		.expl_menu .teyvat {
 		}
 		header {
 			position: relative;
 			width: 100%;
 			height: 100%;
+			z-index: 0;
 			background: url(background/download/main.jpg) center center no-repeat;
 			background-size: cover;
 		}
@@ -124,37 +163,35 @@
 		<a href="home.html" class="home">HOME</a>
 		<a href="news.html" class="news">NEWS</a>
 		<a href="characters.html" class="characters">CHARACTERS</a>
-		<div class="explore_select">
-			<p class="explore_text">EXPLORE</p>
-			<ul class="menu">
-				<li><a href="about_game.html" class="about_game">
-						ABOUT GAME
-				</a></li>
-				<li><a href="teyvat.html" class="teyvat">
-						TEYVAT
-				</a></li>
-				<li><a href="itinerary.html" class="itinerary">
-						ITINERARY
-				</a></li>
-				<li><a href="manga.html" class="manga">
-						MANGA
-				</a></li>
-			</ul>
-		</div>
-		<div class="more_select">
-			<p class="more_text">EXPLORE</p>
-			<ul class="menu">
-				<li><a href="forums.html" class="forums">
-						FORUMS
-				</a></li>
-				<li><a href="top-up.html" class="top-up">
-						TOP-UP
-				</a></li>
-				<li><a href="redeem_code.html" class="redeem_code">
-						REDEEM CODE
-				</a></li>
-			</ul>
-		</div>
+		<a herf="#" class="explore">EXPLORE</a>
+		<a href="#" class="after after_explore"></a>
+		<ul class="expl_menu">
+			<li class="about_game"><a href="about_game.html">
+					ABOUT GAME
+			</a></li>
+			<li class="teyvat"><a href="teyvat.html" class="teyvat">
+					TEYVAT
+			</a></li>
+			<li class="itinerary"><a href="itinerary.html" class="itinerary">
+					ITINERARY
+			</a></li>
+			<li class="manga"><a href="manga.html" class="manga">
+					MANGA
+			</a></li>
+		</ul>
+		<a href="#" class="more">More</a>
+		<a href="#" class="after after_more"></a>
+		<ul class="more_menu">
+			<li><a href="forums.html" class="forums">
+					FORUMS
+			</a></li>
+			<li><a href="top-up.html" class="top-up">
+					TOP-UP
+			</a></li>
+			<li><a href="redeem_code.html" class="redeem_code">
+					REDEEM CODE
+			</a></li>
+		</ul>
 	</div>
 	<header>
 		
@@ -173,8 +210,6 @@
 		//loading
 
 		//scroll
-		
-		
 		$(window).scroll(function(event){
 			if ($(window).scrollTop()) {
 				$("#bar").css("background", "rgba(17,17,17,0.85)");
@@ -184,7 +219,29 @@
 			}
 		});
 		//scroll
-		$("html").css
+
+		//menu
+		/*$(".explore").mouseenter(function() {
+			$(".expl_menu").css("opacity", 0.9);
+			$(".expl_menu").css("color", "#fff");
+			$(".after_explore").css("border-top-color", "#fff");
+		});
+		$(".explore").mouseleave(function() {
+			$(".expl_menu").css("opacity", 0);
+			$(".expl_menu").css("color", "#ccc");
+			$(".after_explore").css("border-top-color", "#ccc");
+		});
+		$(".more").mouseenter(function() {
+			$(".more_menu").css("opacity", 0.9);
+			$(".more_menu").css("color", "#fff");
+			$(".after_more").css("border-top-color", "#fff");
+		});
+		$(".more").mouseleave(function() {
+			$(".more_menu").css("opacity", 0);
+			$(".more_menu").css("color", "#ccc");
+			$(".after_more").css("border-top-color", "#ccc");
+		});*/
+		//menu
 	</script>
 </body>
 </html>
