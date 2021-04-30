@@ -71,18 +71,23 @@
 		#bar .float_frame {
 			left: 331px;
 		}
-		.float_frame a {
+		.float_frame > * {
+			position: relative;
 			float: left;
 			color: #ccc;
 			font-size: 14px;
 			height: 66px;
 			text-align: center;
 			line-height: 66px;
-			padding: 0;
-			margin: 0 15px !important;
+			padding: 0 15px;
+			margin: 0 !important;
 			transition: 0.2s;
 		}
-		.float_frame a:hover {
+		.float_frame p {
+			margin: 0;
+			display: inline-block;
+		}
+		.float_frame > a:hover, .float_frame p:hover {
 			text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
     		color: #fff;
 		}
@@ -96,34 +101,37 @@
 		    cursor: auto;
 		}
 		#bar ul {
+			position: absolute;
 			list-style-type: none;
 			border-radius: 1px;
 			padding: 0;
 			top: 50px;
-		    background-color: #272626;
-		    opacity: 0;
+			left: 0;
+			opacity: 0;
+			pointer-events: none;
+			background-color: #272626;
 		    transition: 0.2s;
 		}
-		#bar ul:hover {
-			opacity: 0.9;	/* FIXME */
-		}
-		#bar .expl_menu {
-			left: 596.5px;
-		}
-		#bar .more_menu {
-			left: 710px;
-		}
-		#bar li {
-			position: relative;
-			width: 214px;
-    		height: 63px;
+		#bar .show_menu {
+			opacity: 0.96;
+			pointer-events: auto;
 		}
 		#bar li a {
 			display: block;
+			width: 214px;
+    		height: 63px;
 			text-align: left;
 			color: #fff;
 			line-height: 63px;
-			padding-left: 10px;
+			padding-left: 20px;
+		}
+		#bar li a:hover {
+			background-color: #3b3a3a;
+		}
+		#bar .log_in div {
+			width: 27px;
+			height: 27px;
+			background-image: url(element/download/bar/log_in.png);
 		}
 		header {
 			position: relative;
@@ -152,36 +160,31 @@
 			<a href="home.html">HOME</a>
 			<a href="news.html">NEWS</a>
 			<a href="characters.html">CHARACTERS</a>
-			<a herf="#" class="select explore">EXPLORE</a>
-			<a herf="#" class="select more">More</a>
+			<div class="select explore">
+				<p>EXPLORE</p>
+				<ul class="expl_menu">
+					<li><a href="about_game.html">ABOUT GAME</a></li>
+					<li><a href="teyvat.html">TEYVAT</a></li>
+					<li><a href="itinerary.html">ITINERARY</a></li>
+					<li><a href="manga.html">MANGA</a></li>
+				</ul>
+			</div>
+			<div class="select more">
+				<p>More</p>
+				<ul class="more_menu">
+					<li><a href="forums.html">FORUMS</a></li>
+					<li><a href="top-up.html">TOP-UP</a></li>
+					<li><a href="redeem_code.html">REDEEM CODE</a></li>
+				</ul>
+			</div>
+			<a href="forums.html" class="in_more">FORUMS</a>
+			<a href="top-up.html" class="in_more">TOP-UP</a>
+			<a href="redeem_code.html" class="in_more">REDEEM CODE</a>
+			<div class="log_in">
+				<span>Log In</span>
+				<div></div>
+			</div>
 		</div>
-
-		<ul class="expl_menu">
-			<li class="about_game"><a href="about_game.html">
-					ABOUT GAME
-			</a></li>
-			<li class="teyvat"><a href="teyvat.html" class="teyvat">
-					TEYVAT
-			</a></li>
-			<li class="itinerary"><a href="itinerary.html" class="itinerary">
-					ITINERARY
-			</a></li>
-			<li class="manga"><a href="manga.html" class="manga">
-					MANGA
-			</a></li>
-		</ul>
-		<ul class="more_menu">
-			<li><a href="forums.html" class="forums">
-					FORUMS
-			</a></li>
-			<li><a href="top-up.html" class="top-up">
-					TOP-UP
-			</a></li>
-			<li><a href="redeem_code.html" class="redeem_code">
-					REDEEM CODE
-			</a></li>
-		</ul>
-
 	</div>
 	<header>
 		
@@ -201,29 +204,36 @@
 
 		//scroll
 		$(window).scroll(function(event){
-			if ($(window).scrollTop()) {
+			if ($(window).scrollTop())
 				$("#bar").css("background", "rgba(17,17,17,0.85)");
-			}
-			else {
-				$("#bar").css("background", "rgba(17,17,17,0.75)");
-			}
+			else $("#bar").css("background", "rgba(17,17,17,0.75)");
 		});
 		//scroll
 
 		//menu
-		$(".explore").mouseenter(function() {
-			$(".expl_menu").css("opacity", 0.9);
-		});
-		$(".explore").mouseleave(function() {
-			$(".expl_menu").css("opacity", 0);
-		});
-		$(".more").mouseenter(function() {
-			$(".more_menu").css("opacity", 0.9);
-		});
-		$(".more").mouseleave(function() {
-			$(".more_menu").css("opacity", 0);
+		$(".select").hover(function() {
+			$(this).children("ul").addClass("show_menu");
+		}, function() {
+			$(this).children("ul").removeClass("show_menu");
 		});
 		//menu
+
+		//more
+		check_more($("body").width());
+		function check_more(width) {
+			if (width > 1280) {
+				$(".more").css("display", "none");
+				$(".in_more").css("display", "block");
+			}
+			else {
+				$(".in_more").css("display", "none");
+				$(".more").css("display", "block");
+			}
+		}
+		$(window).resize(function() {
+			check_more($("body").width());
+		});
+		//more
 	</script>
 </body>
 </html>
