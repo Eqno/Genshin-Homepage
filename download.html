@@ -7,149 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Eqnoxx">
 	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
-
-	<style type="text/css">
-		* {
-			font-family: Helvetica;
-		}
-		a {
-			text-decoration: none
-		}
-		body {
-			position: absolute;
-			width: 100%;
-			min-width: 1280px;
-			height: 100%;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			margin: auto;
-		}
-		#loading {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: black;
-			opacity: 1;
-			transition: all 0.5s;
-			z-index: 3000;
-		}
-		#bar {
-			position: fixed;
-			width: 100%;
-			height: 66px;
-			top: 0;
-			left: 0;
-			background: rgba(17,17,17,0.75);
-			z-index: 2900;
-		}
-		#bar * {
-			background: center top no-repeat;
-			background-size: cover;
-			z-index: 2901;
-		}
-		#bar > * {
-			position: absolute;
-		}
-		#bar .music {
-			width: 30px;
-			height: 30px;
-			top: 18px;
-			left: 70px;
-			cursor: pointer;
-			background-image: url(element/download/bar/music.png);
-		}
-		#bar .logo {
-			width: 362px;
-			height: 66px;
-			left: 28px;
-			background-image: url(element/download/bar/logo.png);
-		}
-		#bar .float_frame {
-			left: 331px;
-		}
-		.float_frame > * {
-			position: relative;
-			float: left;
-			color: #ccc;
-			font-size: 14px;
-			height: 66px;
-			text-align: center;
-			line-height: 66px;
-			padding: 0 15px;
-			margin: 0 !important;
-			transition: 0.2s;
-		}
-		.float_frame p {
-			margin: 0;
-			display: inline-block;
-		}
-		.float_frame > a:hover, .float_frame p:hover {
-			text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
-    		color: #fff;
-		}
-		.float_frame .select::after {
-			content: '';
-			border-top: 5px solid #ccc;
-		    border-left: 4.5px solid transparent;
-		    border-right: 4.5px solid transparent;
-			margin: 3px 0 3px 10px;
-			display: inline-block;
-		    cursor: auto;
-		}
-		#bar ul {
-			position: absolute;
-			list-style-type: none;
-			border-radius: 1px;
-			padding: 0;
-			top: 50px;
-			left: 0;
-			opacity: 0;
-			pointer-events: none;
-			background-color: #272626;
-		    transition: 0.2s;
-		}
-		#bar .show_menu {
-			opacity: 0.96;
-			pointer-events: auto;
-		}
-		#bar li a {
-			display: block;
-			width: 214px;
-    		height: 63px;
-			text-align: left;
-			color: #fff;
-			line-height: 63px;
-			padding-left: 20px;
-		}
-		#bar li a:hover {
-			background-color: #3b3a3a;
-		}
-		#bar .log_in div {
-			width: 27px;
-			height: 27px;
-			background-image: url(element/download/bar/log_in.png);
-		}
-		header {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			z-index: 0;
-			background: url(background/download/main.jpg) center center no-repeat;
-			background-size: cover;
-		}
-		content .test {
-			position: relative;
-			width: 100%;
-			height: 2000px;
-		}
-	</style>
-
-
-
+	<link rel="stylesheet" type="text/css" href="css/download.css">
 </head>
 <body>
 	<div id="loading"></div>
@@ -180,20 +38,125 @@
 			<a href="forums.html" class="in_more">FORUMS</a>
 			<a href="top-up.html" class="in_more">TOP-UP</a>
 			<a href="redeem_code.html" class="in_more">REDEEM CODE</a>
-			<div class="log_in">
-				<span>Log In</span>
-				<div></div>
-			</div>
 		</div>
+		<div class="log_in">
+			<span>Log In</span>
+			<div></div>
+		</div>
+		<div class="download"></div>
 	</div>
 	<header>
-		
+		<div class="title">
+			<div class="qr-code"></div>
+			<div class="dl-list">
+				<div class="up">
+					<a href="https://www.playstation.com/zh-hans-cn/games/genshin-impact" target="_blank" class="ps"></a>
+					<a href="https://ys-api-os.mihoyo.com/event/download_porter/link/ys_global/genshinimpactpc/default" target="_blank" class="win"></a>
+				</div>
+				<div class="bottom">
+					<a href="https://apps.apple.com/app/id1517783697" target="_blank" class="apple"></a>
+					<a href="https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact" target="_blank" class="google"></a>
+				</div>
+			</div>
+		</div>
 	</header>
-	<content>
-		<div class="test">123</div>
-	</content>
+	<article>
+		<div class="FAQ">
+			<h2 class="title">FAQ</h2>
+			<div class="content">
+				<div class="qa-list">
+					<ul>
+						<li>
+							<a href="https://genshin.mihoyo.com/en/news/detail/5654" target="_blank">What if I am unable to download/update the game?</a>
+						</li>
+						<li>
+							<a href="https://genshin.mihoyo.com/en/news/detail/5654" target="_blank">While downloading, I get the following message: "Please check your network connection.</a>
+						</li>
+						<li>
+							<a href="https://genshin.mihoyo.com/en/news/detail/5654" target="_blank">After opening the game, the game does not respond/the game does not launch.</a>
+						</li>
+						<li>
+							<a href="https://genshin.mihoyo.com/en/news/detail/5654" target="_blank">Clicking the launcher produces no response.</a>
+						</li>
+						<li>
+							<a href="https://genshin.mihoyo.com/en/news/detail/5654" target="_blank">Why does the game crash for no reason?</a>
+						</li>
+						<li>
+							<a href="https://genshin.mihoyo.com/en/news/detail/5654" target="_blank">What do I do if the game lags?</a>
+						</li>
+						<li>
+							<a href="https://genshin.mihoyo.com/en/news/detail/5654" target="_blank">Does the PC version of Genshin Impact support MacOS systems?</a>
+						</li>
+						<li>
+							<a href="https://genshin.mihoyo.com/en/news/detail/5314" target="_blank">Will Genshin Impact be free-to-play on the PlayStation 4? When  will the game be playable?</a>
+						</li>
+						<li>
+							<a href="https://genshin.mihoyo.com/en/news/detail/5314" target="_blank">Which languages will be supported in the PS4 version of  Genshin Impact?</a>
+						</li>
+					</ul>
+					<a href="https://www.hoyolab.com/genshin" target="_blank" class="view-more">View more ></a>
+				</div>
+			</div>
+		</div>
+		<div class="SR">
+			<h2 class="title">System Requirements</h2>
+			<div class="content">
+				<ul>
+					<li class="select_active">Windows</li>
+					<li>Android</li>
+					<li>iOS</li>
+				</ul>
+				<div class="sr text_active">
+					<p><strong>&gt;&gt;&gt;Recommended configuration:</strong></p>
+					<p>Operating system: Windows 7 SP1 64-bit, Windows 8.1 64-bit, or Windows 10 64-bit</p>
+					<p>Processor: Intel Core i7 equivalent or higher</p>
+					<p>Memory: 16 GB RAM</p>
+					<p>Graphics: NVIDIA GeForce GTX 1060 6 GB and higher</p>
+					<p>DirectX version: 11</p>
+					<p>Storage: Please reserve 30 GB of space</p>
+					<p style="white-space: pre-wrap; min-height: 1.5em;"></p>
+					<p><strong>&gt;&gt;&gt;Minimum configuration:</strong></p>
+					<p>Operating system: Windows 7 SP1 64-bit, Windows 8.1 64-bit or Windows 10 64-bit</p>
+					<p>Processor: Intel Core i5 or equivalent</p>
+					<p>Memory: 8 GB RAM</p>
+					<p>Graphics card: NVIDIA® GeForce® GT 1030 and higher</p>
+					<p>DirectX version: 11</p>
+					<p>Storage: Please reserve 30 GB of space</p>
+				</div>
+				<div class="sr">
+					<p><strong>&gt;&gt;&gt;Recommended configuration: </strong></p>
+					<p>CPU: Qualcomm Snapdragon 845, Kirin 810 and above</p>
+					<p>RAM: 4 GB and above</p>
+					<p>Recommended system: Android 8.1 and above</p>
+					<p style="white-space: pre-wrap; min-height: 1.5em;"></p>
+					<p><strong>&gt;&gt;&gt;Supported configuration: </strong></p>
+					<p>Compatibility requirements: Arm v8a 64-bit device</p>
+					<p>Memory: 3 GB and above</p>
+					<p>Supported system: Android 7.0 or above</p>
+					<p>Storage: Please reserve 8 GB of space</p>
+				</div>
+				<div class="sr">
+					<p>Requires iOS 9.0 or later</p>
+					<p style="white-space: pre-wrap; min-height: 1.5em;"></p>
+					<p>Compatible with iPhone 8 Plus, iPhone X, iPhone XS, iPhone XS Max, iPhone XR, iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone SE (2nd generation), iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 12 Pro Max, iPad Air (3rd generation), iPad Air (4th generation), iPad mini (5th generation), iPad Pro (12.9-inch) (2nd generation), iPad Pro (10.5-inch) (2nd generation), iPad Pro (11-inch) (3rd generation), iPad Pro (12.9-inch) (3rd generation), iPad Pro (11-inch) (4th generation), iPad Pro (12.9-inch) (4th generation), and iPad (8th generation).</p>
+				</div>
+			</div>
+		</div>
+	</article>
 	<footer>
-		
+		<div class="bottom-frame">
+			<div class="logo-frame">
+				<div class="mihoyo"></div>
+				<div class="line"></div>
+				<div class="genshin"></div>
+			</div>
+			<div class="author">
+				<div class="nick-name-chn"></div>
+				<div class="nick-name-eng"></div>
+				<div class="line2"></div>
+				<div class="real-name">计智20H1范若筠&nbsp;&nbsp;&nbsp;作品</div>
+			</div>
+		</div>
 	</footer>
 
 	<script type="text/javascript">
@@ -207,6 +170,7 @@
 			if ($(window).scrollTop())
 				$("#bar").css("background", "rgba(17,17,17,0.85)");
 			else $("#bar").css("background", "rgba(17,17,17,0.75)");
+			$("#bar").css("transform", "translateX(-"+$(window).scrollLeft()+"px)");
 		});
 		//scroll
 
@@ -234,6 +198,15 @@
 			check_more($("body").width());
 		});
 		//more
+
+		//SR-click
+		$(".SR li").click(function() {
+			$(".SR li").removeClass("select_active");
+			$(".SR .sr").removeClass("text_active");
+			$(this).addClass("select_active");
+			$(".SR .sr").filter(":eq("+$(this).index()+")").addClass("text_active");
+		});
+		//SR-click
 	</script>
 </body>
 </html>

@@ -30,8 +30,8 @@
 		</header>
 		<!--header-->
 
-		<!--content-->
-		<content>
+		<!--article-->
+		<article>
 
 			<!--c-i-->
 			<div class="c-i">
@@ -132,8 +132,8 @@
 				</div>
 			</div>
 
-		</content>
-		<!--content-->
+		</article>
+		<!--article-->
 
 		<!--footer-->
 		<footer>
@@ -253,8 +253,23 @@
 		};
 		//v-i-slide
 
-		//g-f-slide
+		//change-point
 		var index = 1;
+		function change_point(cmd) {
+			$(".page-point").filter(":eq("+index+")").css("background-image", "url(element/main/g-f/p"+cmd+".png)");
+		}
+		change_point(2);
+		//change-point
+
+		//point-hover
+		$(".page-point").hover(function() {
+			$(this).css("background-image", "url(element/main/g-f/p2.png)");
+		}, function() {
+			$(this).css("background-image", "url(element/main/g-f/p1.png)");
+		});
+		//point-hover
+
+		//g-f-slide
 		var all = $(".g-f .frame .pics");
 		var len = all.length;
 		function slide_move(target) {
@@ -264,7 +279,6 @@
 			var right = all.filter(":eq("+right_index+")");
 			var front = all.filter(":eq("+target+")");
 			var left = all.filter(":eq("+left_index+")");
-
 			all.each(function() {
 				var self = $(this);
 				if (self.is(left)) {
@@ -280,7 +294,9 @@
 					self.attr("class", "pics pic-back");
 				}
 			});
+			change_point(1);
 			index = target;
+			change_point(2);
 		}
 		$(".g-f .slide-button-left").click(function() {
 			slide_move(index-1);
@@ -292,6 +308,7 @@
 
 		//page-point
 		$(".g-f .page-point").click(async function() {
+			change_point(1);
 			var delta = $(this).index() - index;
 			if (Math.abs(delta) >= len/2) {
 				delta = (delta>0?-1:1)*len + delta;
@@ -303,6 +320,7 @@
 				await sleep(300);
 				delta -= step;
 			}
+			change_point(2);
 		});
 		//page-point
 
@@ -314,19 +332,19 @@
 			$("body").css("overflow", "hidden");
 		});
 		//video-2
-		$("#fab content .c-i #venti .video").click(function(){
+		$("#fab article .c-i #venti .video").click(function(){
 			$(".video-back").show();
 			$(".video-back #video-2").show();
 			$("body").css("overflow", "hidden");
 		});
 		//video-3
-		$("#fab content .c-i #rosaria .video").click(function(){
+		$("#fab article .c-i #rosaria .video").click(function(){
 			$(".video-back").show();
 			$(".video-back #video-3").show();
 			$("body").css("overflow", "hidden");
 		});
 		//video-4
-		$("#fab content .c-i #tartaglia .video").click(function(){
+		$("#fab article .c-i #tartaglia .video").click(function(){
 			$(".video-back").show();
 			$(".video-back #video-4").show();
 			$("body").css("overflow", "hidden");

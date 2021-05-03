@@ -38,14 +38,14 @@ body {
 	background: black;
 }
 
-#fab header,content,footer {
+#fab header,article,footer {
 	position: relative;
 	width: 100%;
 }
 #fab header {
 	height: 1082px;
 }
-#fab content {
+#fab article {
 	height: auto;
 }
 #fab footer {
@@ -99,7 +99,7 @@ body {
 	background: url(../element/main/head/header-title.png) center top no-repeat;
 }
 
-#fab content .c-i,.v-i,.g-f {
+#fab article .c-i,.v-i,.g-f {
 	position: relative;
 	width: 100%;
 	height: 1140px;
@@ -107,7 +107,7 @@ body {
 	background: center top no-repeat;
 }
 
-#fab content .c-i {
+#fab article .c-i {
 	background-image: url(../element/main/c-i/c-i.png);
 }
 .c-i .slide {
@@ -184,7 +184,7 @@ body {
 	z-index: 999;
 }
 
-#fab content .v-i {
+#fab article .v-i {
 	background-image: url(../element/main/v-i/v-i.png);
 }
 .v-i .frame {
@@ -244,7 +244,7 @@ body {
 	background-image: url(../element/main/v-i/nxt.png);
 }
 
-#fab content .g-f {
+#fab article .g-f {
 	background: url(../element/main/g-f/g-f.png) center top no-repeat;
 }
 .g-f .frame {
@@ -335,9 +335,6 @@ body {
 	cursor: pointer;
 	background: url(../element/main/g-f/p1.png) center top no-repeat;
 	transition: 0.3s;
-}
-.g-f .page-point:hover {
-	background-image: url(../element/main/g-f/p2.png);
 }
 
 #fab footer a {
