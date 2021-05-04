@@ -29,7 +29,7 @@ body {
 #fab {
 	position: relative;
 	width: 100%;
-	background: url(../background/main/main.jpg) center top no-repeat;
+	background: url(../background/v1.5/main.jpg) center top no-repeat;
 }
 #bottom {
 	position: relative;
@@ -49,7 +49,7 @@ body {
 	height: auto;
 }
 #fab footer {
-	height: 340px;
+	height: 173px;
 }
 #fab header .logo {
 	position: absolute;
@@ -57,15 +57,15 @@ body {
 	height: 200px;			
 	top: 4px;
 	left: 57px;
-	background: url(../element/main/head/logo.png) center top no-repeat;
+	background: url(../element/v1.5/head/logo.png) center top no-repeat;
 }
 #fab header .bars {
 	position: absolute;
 	width: 191px;
 	height: 52px;
 	top: 56px;
-	opacity: 0.7;
-	transition: all 0.3s;
+	opacity: 0.8;
+	transition: 0.3s;
 	background: center top no-repeat;
 }
 #fab header .bars:hover {
@@ -73,30 +73,34 @@ body {
 }
 #fab header .bar1 {
 	right: 276px;
-	background: url(../element/main/head/bar1.png);
+	background: url(../element/v1.5/head/bar1.png);
 }
 #fab header .bar2 {
 	right: 66px;
-	background: url(../element/main/head/bar2.png);
+	background: url(../element/v1.5/head/bar2.png);
 }
 #fab header .video {
 	position: absolute;
-	width: 511px;
-	height: 106px;
-	top: 598px;
-	left: 50%;
-	transform: translateX(-50%);
+	width: 170px;
+	height: 152px;
+	top: 720px;
+	left: 235px;
 	cursor: pointer;
-	background: url(../element/main/head/header-button.png) center top no-repeat;
+	background: url(../element/v1.5/head/header-button.png) center top no-repeat;
+	transition: 0.3s;
+	z-index: 1000;
+}
+#fab header .video:hover {
+	background: url(../element/v1.5/head/header-button2.png) center top no-repeat;
 }
 #fab header .title {
 	position: absolute;
-	width: 971px;
-	height: 258px;
-	top: 675px;
+	width: 1102px;
+    height: 370px;
+    top: 547px;
 	left: 50%;
 	transform: translateX(-50%);
-	background: url(../element/main/head/header-title.png) center top no-repeat;
+	background: url(../element/v1.5/head/header-title.png) center top no-repeat;
 }
 
 #fab article .c-i,.v-i,.g-f {
@@ -106,9 +110,12 @@ body {
 	overflow: hidden;
 	background: center top no-repeat;
 }
+#fab article .g-f {
+	height: 900px;
+}
 
 #fab article .c-i {
-	background-image: url(../element/main/c-i/c-i.png);
+	background-image: url(../element/v1.5/c-i/c-i.png);
 }
 .c-i .slide {
 	position: relative;
@@ -120,7 +127,7 @@ body {
 	position: relative;
 	width: 520px;
 	height: 700px;
-	top: 370px;
+	top: 310px;
 	left: 100px;
 	text-align: left;
 }
@@ -135,15 +142,15 @@ body {
 	height: 90px;
 	top: 35px;
 	font-size: 22px;
-	color: #147E85;
+	color: #fff;
 	text-align: left;
 	line-height: 30px;
 	z-index: 998;
 }
 .c-i .desc-frame .video {
 	position: relative;
-    width: 358px;
-    height: 208px;
+    width: 410px;
+    height: 230px;
     top: 120px;
 	cursor: pointer;
 	z-index: 1000;
@@ -152,18 +159,18 @@ body {
 .c-i .desc-frame .view-more { 
 	position: relative;
 	top: 145px;
-	font-size: 16px;
+	font-size: 24px;
 	font-weight: 800;
-	color: #147E85;
+	color: #fff;
 	text-align: left;
 	line-height: 24px;
 	z-index: 1000;
 }
 .c-i .pic {
 	position: absolute;
-	width: 1210px;
+	width: 1080px;
 	height: auto;
-	top: 0;
+	top: 100px;
 	right: 0;
 	z-index: 997;
 }
@@ -185,7 +192,7 @@ body {
 }
 
 #fab article .v-i {
-	background-image: url(../element/main/v-i/v-i.png);
+	background-image: url(../element/v1.5/v-i/v-i.png);
 }
 .v-i .frame {
 	position: relative;
@@ -227,25 +234,27 @@ body {
 }
 .v-i .slide-button {
 	position: absolute;
-	width: 110px;
-	height: 83px;
+	width: 180px;
+	height: 60px;
 	top: 50%;
 	transform: translateY(-50%);
 	cursor: pointer;
 	z-index: 1000;
-	background: center top no-repeat;
+	background: url(../element/v1.5/v-i/nxt.png) center top no-repeat;
 }
 .v-i .slide-button-left {
 	left: 0;
-	background-image: url(../element/main/v-i/pre.png);
+	transform: rotateY(180deg);
 }
 .v-i .slide-button-right {
 	right: 0;
-	background-image: url(../element/main/v-i/nxt.png);
 }
 
 #fab article .g-f {
-	background: url(../element/main/g-f/g-f.png) center top no-repeat;
+	background: url(../element/v1.5/g-f/g-f.png) center top no-repeat;
+}
+.g-f * {
+	background-size: cover;
 }
 .g-f .frame {
 	position: relative;
@@ -262,7 +271,6 @@ body {
 	top: 27px;
 	z-index: 999;
 	filter: brightness(0.5);
-	background: center top no-repeat;
 	transition: all 0.5s;
 }
 .g-f .pic-front {
@@ -287,35 +295,34 @@ body {
 	z-index: 998;
 }
 .g-f #pic1 {
-	background-image: url(../element/main/g-f/1.png);
+	background-image: url(../element/v1.5/g-f/1.jpg);
 }
 .g-f #pic2 {
-	background-image: url(../element/main/g-f/2.png);
+	background-image: url(../element/v1.5/g-f/2.png);
 }
 .g-f #pic3 {
-	background-image: url(../element/main/g-f/3.png);
+	background-image: url(../element/v1.5/g-f/3.png);
 }
 .g-f #pic4 {
-	background-image: url(../element/main/g-f/4.png);
+	background-image: url(../element/v1.5/g-f/4.png);
 }
 .g-f #pic5 {
-	background-image: url(../element/main/g-f/5.png);
+	background-image: url(../element/v1.5/g-f/5.png);
 }
 .g-f .slide-button {
 	position: absolute;
 	width: 48px;
-	height: 48px;
-	top: 480px;
+	height: 55px;
+	top: 475px;
 	cursor: pointer;
-	background: center top no-repeat;
+	background: url(../element/v1.5/g-f/nxt.png) center top no-repeat;
 }
 .g-f .slide-button-left {
 	left: 435px;
-	background-image: url(../element/main/g-f/pre.png);
+	transform: rotateY(180deg);
 }
 .g-f .slide-button-right {
 	right: 435px;
-	background-image: url(../element/main/g-f/nxt.png);
 }
 
 .g-f .point-frame {
@@ -333,7 +340,7 @@ body {
 	padding: 7px;
 	float: left;
 	cursor: pointer;
-	background: url(../element/main/g-f/p1.png) center top no-repeat;
+	background: url(../element/v1.5/g-f/p1.png) center top no-repeat;
 	transition: 0.3s;
 }
 
@@ -348,14 +355,14 @@ body {
 	position:absolute;
 	width: 300px;
 	height: 100px;
-	top: 70px;
+	top: 10px;
 	left: 50%;
 	transform: translateX(-50%);
-	background: url(../element/main/g-f/last-version.png) center top no-repeat;
+	background: url(../element/v1.5/g-f/last-version.png) center top no-repeat;
 }
 #fab footer .desc {
 	position:absolute;
-	top: 150px;
+	top: 90px;
 	left: 50%;
 	transform: translateX(-50%);
 	font-size: 20px;
@@ -384,7 +391,7 @@ body {
 	height: 100px;
 	top: 21px;
 	left: 0;
-	background: url(../element/main/bottom/logo.png) center top no-repeat;
+	background: url(../element/v1.5/bottom/logo.png) center top no-repeat;
 }
 #bottom .line {
 	position: absolute;
@@ -400,7 +407,7 @@ body {
 	width: 200px;
 	height: 100px;
 	right: 0;
-	background: url(../element/main/bottom/logo2.png) center top no-repeat;
+	background: url(../element/v1.5/bottom/logo2.png) center top no-repeat;
 }
 #bottom .author {
 	position: absolute;
@@ -414,7 +421,7 @@ body {
 	width: 300px;
 	height: 125px;
 	top: 13px;
-	background: url(../element/main/bottom/nick-name-chn.png) center top no-repeat;
+	background: url(../element/v1.5/bottom/nick-name-chn.png) center top no-repeat;
 }
 #bottom .nick-name-eng {
 	position: absolute;
@@ -422,7 +429,7 @@ body {
 	height: 80px;
 	top: 29.5px;
 	left: 265px;
-	background: url(../element/main/bottom/nick-name-eng.png) center top no-repeat;
+	background: url(../element/v1.5/bottom/nick-name-eng.png) center top no-repeat;
 }
 #bottom .line2 {
 	position: absolute;
@@ -449,8 +456,8 @@ body {
 	background: rgba(0, 0, 0, 0.7);
 	opacity: 0;
 	pointer-events: none;
-	z-index: 0;
 	transition: 0.3s;
+	z-index: 0;
 }
 .video-active {
 	opacity: 1;
@@ -479,5 +486,5 @@ body {
 	opacity: 0.75;
 	border: 0;
 	font-size: 0;
-	background: url(../element/main/close.png) center top no-repeat;
+	background: url(../element/v1.5/close.png) center top no-repeat;
 }

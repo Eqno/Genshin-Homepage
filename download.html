@@ -13,37 +13,43 @@
 	<div id="loading"></div>
 	<div id="bar">
 		<div class="music"></div>
+		<audio id="bgm1">
+			<source src="element/download/media/bgm1.mp3">
+		</audio>
+		<audio id="bgm2">
+			<source src="element/download/media/bgm2.mp3">
+		</audio>
 		<div class="logo"></div>
 		<div class="float_frame">
 			<a href="home.html">HOME</a>
-			<a href="news.html">NEWS</a>
-			<a href="characters.html">CHARACTERS</a>
+			<a href="https://genshin.mihoyo.com/en/news">NEWS</a>
+			<a href="https://genshin.mihoyo.com/en/character/mondstadt">CHARACTERS</a>
 			<div class="select explore">
 				<p>EXPLORE</p>
 				<ul class="expl_menu">
-					<li><a href="about_game.html">ABOUT GAME</a></li>
-					<li><a href="teyvat.html">TEYVAT</a></li>
-					<li><a href="itinerary.html">ITINERARY</a></li>
-					<li><a href="manga.html">MANGA</a></li>
+					<li><a href="https://genshin.mihoyo.com/en/game">ABOUT GAME</a></li>
+					<li><a href="https://genshin.mihoyo.com/en/map">TEYVAT</a></li>
+					<li><a href="https://genshin.mihoyo.com/en/town">ITINERARY</a></li>
+					<li><a href="https://genshin.mihoyo.com/en/manga">MANGA</a></li>
 				</ul>
 			</div>
 			<div class="select more">
 				<p>More</p>
 				<ul class="more_menu">
-					<li><a href="forums.html">FORUMS</a></li>
-					<li><a href="top-up.html">TOP-UP</a></li>
-					<li><a href="redeem_code.html">REDEEM CODE</a></li>
+					<li><a href="https://bbs.mihoyo.com/ys" target="_blank">FORUMS</a></li>
+					<li><a href="https://webstatic-sea.mihoyo.com/payment/genshin/index.html" target="_blank">TOP-UP</a></li>
+					<li><a href="https://genshin.mihoyo.com/en/gift">REDEEM CODE</a></li>
 				</ul>
 			</div>
-			<a href="forums.html" class="in_more">FORUMS</a>
-			<a href="top-up.html" class="in_more">TOP-UP</a>
-			<a href="redeem_code.html" class="in_more">REDEEM CODE</a>
+			<a href="https://bbs.mihoyo.com/ys" class="in_more" target="_blank">FORUMS</a>
+			<a href="https://webstatic-sea.mihoyo.com/payment/genshin/index.html" class="in_more" target="_blank">TOP-UP</a>
+			<a href="https://genshin.mihoyo.com/en/gift" class="in_more">REDEEM CODE</a>
 		</div>
 		<div class="log_in">
 			<span>Log In</span>
 			<div></div>
 		</div>
-		<div class="download"></div>
+		<a href="https://ys-api-os.mihoyo.com/event/download_porter/link/ys_global/genshinimpactpc/default" class="download"></a>
 	</div>
 	<header>
 		<div class="title">
@@ -158,12 +164,56 @@
 			</div>
 		</div>
 	</footer>
-
+	<div class="login">
+		<div class="frame">
+			<div class="logo"></div>
+			<div class="close"></div>
+			<form action="login-fake.html" method="post" target="_blank">
+				<input type="text" name="username" placeholder="Username/Email" class="first-input">
+				<input type="text" name="password" placeholder="Password">
+				<button>Log In</button>
+			</form>
+		</div>
+	</div>
 	<script type="text/javascript">
 		//loading
-		$("#loading").css("z-index", 0);
-		$("#loading").css("opacity", 0);
+		$(function() {
+			$("#loading").css("z-index", 0);
+			$("#loading").css("opacity", 0);
+		});
 		//loading
+
+		//music
+		var audio1 = document.getElementById("bgm1");
+		var audio2 = document.getElementById("bgm2");
+		audio1.onended = function() {
+			audio2.play();
+		}
+		audio2.onended = function() {
+			audio2.play();
+		}
+		var start = 0;
+		$(".music").click(function() {
+			if (start == 0) {
+				audio1.play();
+				audio2.play();
+				$(this).css("background-image", "url(element/download/bar/music.png)");
+				start = 1;
+			}
+			else {
+				if (audio1.muted || audio2.muted) {
+					audio1.muted = false;
+					audio2.muted = false;
+					$(this).css("background-image", "url(element/download/bar/music.png)");
+				}
+				else {
+					audio1.muted = true;
+					audio2.muted = true;
+					$(this).css("background-image", "url(element/download/bar/music2.png)");
+				}
+			}
+		});
+		//music
 
 		//scroll
 		$(window).scroll(function(event){
@@ -183,9 +233,11 @@
 		//menu
 
 		//more
-		check_more($("body").width());
+		$(function() {
+			check_more($("body").width());
+		});
 		function check_more(width) {
-			if (width > 1280) {
+			if (width > 1340) {
 				$(".more").css("display", "none");
 				$(".in_more").css("display", "block");
 			}
@@ -207,6 +259,15 @@
 			$(".SR .sr").filter(":eq("+$(this).index()+")").addClass("text_active");
 		});
 		//SR-click
+
+		//login
+		$(".log_in").click(function() {
+			$(".login").show();
+		});
+		$(".close").click(function() {
+			$(".login").hide();
+		});
+		//login
 	</script>
 </body>
 </html>
