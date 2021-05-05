@@ -84,7 +84,8 @@ body {
 	width: 170px;
 	height: 152px;
 	top: 720px;
-	left: 235px;
+	left: 50%;
+	transform: translateX(-270%);
 	cursor: pointer;
 	background: url(../element/v1.5/head/header-button.png) center top no-repeat;
 	transition: 0.3s;
@@ -164,6 +165,7 @@ body {
 	color: #fff;
 	text-align: left;
 	line-height: 24px;
+	cursor: pointer;
 	z-index: 1000;
 }
 .c-i .pic {
@@ -197,7 +199,8 @@ body {
 .v-i .frame {
 	position: relative;
 	width: 100%;
-	max-width: 1610px;
+	max-width: 1710px;
+	min-width: 1340px;
 	height: 700px;
 	top: 300px;
 	margin-left: 50%;
@@ -234,19 +237,20 @@ body {
 }
 .v-i .slide-button {
 	position: absolute;
-	width: 180px;
-	height: 60px;
+	width: 174px;
+	height: 56px;
 	top: 50%;
-	transform: translateY(-50%);
 	cursor: pointer;
 	z-index: 1000;
-	background: url(../element/v1.5/v-i/nxt.png) center top no-repeat;
+	background: url(../element/v1.5/v-i/nxt.png);
+	background-size: auto;
 }
 .v-i .slide-button-left {
+	transform: scaleX(-1) translateY(-50%);
 	left: 0;
-	transform: rotateY(180deg);
-}
+} 
 .v-i .slide-button-right {
+	transform: translateY(-50%);
 	right: 0;
 }
 
@@ -311,11 +315,11 @@ body {
 }
 .g-f .slide-button {
 	position: absolute;
-	width: 48px;
+	width: 55px;
 	height: 55px;
 	top: 475px;
 	cursor: pointer;
-	background: url(../element/v1.5/g-f/nxt.png) center top no-repeat;
+	background: url(../element/v1.5/g-f/nxt.png);
 }
 .g-f .slide-button-left {
 	left: 435px;
