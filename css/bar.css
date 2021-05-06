@@ -1,0 +1,126 @@
+#bar {
+	position: fixed;
+	width: 100%;
+	min-width: 1280px;
+	height: 66px;
+	top: 0;
+	left: 0;
+	background: rgba(17,17,17,0.75);
+	z-index: 2900;
+	transform: translateX(0);
+}
+#bar * {
+	z-index: 2901;
+}
+#bar > * {
+	position: absolute;
+}
+#bar .music {
+	width: 30px;
+	height: 30px;
+	top: 18px;
+	left: 70px;
+	cursor: pointer;
+	background-image: url(../element/download/bar/music2.png);
+	z-index: 2905;
+}
+#bar .logo {
+	width: 362px;
+	height: 66px;
+	left: 28px;
+	background-image: url(../element/download/bar/logo.png);
+}
+#bar .float_frame {
+	left: 331px;
+}
+#bar .float_frame > * {
+	position: relative;
+	float: left;
+	color: #ccc;
+	font-size: 14px;
+	height: 66px;
+	text-align: center;
+	line-height: 66px;
+	padding: 0 15px;
+	margin: 0 !important;
+	transition: 0.2s;
+}
+#bar .float_frame p {
+	margin: 0;
+	display: inline-block;
+}
+#bar .float_frame > a:hover, #bar .float_frame p:hover {
+	text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+	color: #fff;
+}
+#bar .float_frame .select {
+	cursor: pointer;
+}
+#bar .float_frame .select::after {
+	content: '';
+	border-top: 5px solid #ccc;
+    border-left: 4.5px solid transparent;
+    border-right: 4.5px solid transparent;
+	margin: 0 0 2px 5px;
+	display: inline-block;
+    cursor: auto;
+}
+#bar ul {
+	position: absolute;
+	list-style-type: none;
+	border-radius: 1px;
+	padding: 0;
+	top: 66px;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	background-color: #272626;
+    transition: 0.3s;
+}
+#bar .show_menu {
+	opacity: 0.96;
+	pointer-events: auto;
+}
+#bar li a {
+	display: block;
+	color: #fff;
+	text-align: left;
+	line-height: 63px;
+	width: 214px;
+	height: 63px;
+	padding-left: 20px;
+}
+#bar li a:hover {
+	background-color: #3b3a3a;
+}
+#bar .log_in {
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	line-height: 66px;
+	height: 66px;
+	right: 220px;
+	cursor: pointer;
+	opacity: 0.7;
+	transition: 0.2s;
+}
+#bar .log_in:hover {
+	opacity: 1;
+}
+#bar .log_in div {
+	display: inline-block;
+	width: 27px;
+	height: 27px;
+	margin-left: 14px;
+	transform: translateY(9px);
+	background-image: url(../element/download/bar/log_in.png);
+}
+#bar .download {
+	width: 196px;
+	height: 70px;
+	top: -4px;
+	right: 0;
+	cursor: pointer;
+	background-image: url(../element/download/bar/download.png);
+	background-size: auto;
+}

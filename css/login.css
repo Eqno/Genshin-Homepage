@@ -1,0 +1,74 @@
+.login {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.6);
+	z-index: 2910;
+}
+.login * {
+	position: absolute;
+	z-index: 2911;
+}
+.login .frame {
+	width: 450px;
+	height: 345px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin-top: 58px;
+	padding: 60px 40px 50px;
+	border-radius: 4px;
+	background-color: #fff;
+}
+.login .logo {
+	width: 107px;
+	height: 38px;
+	top: -58px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-image: url(../element/download/login/logo.png);
+}
+.login .close {
+	width: 30px;
+	height: 30px;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+	background-image: url(../element/download/login/close.png);
+	background-size: 16px 16px;
+	background-position: center center;
+}
+.login form {
+	width: 0;
+	height: 0;
+}
+.login input {
+	position: relative;
+	color: #3c4044;
+	font-size: 16px;
+	width: 370px;
+	height: 48px;
+	line-height: 48px;
+	border-radius: 4px;
+	border: 1px solid #ebebeb;
+	padding: 10px 12px;
+	margin: 10px 0;
+}
+.login button {
+	position: relative;
+	color: #fff;
+	font-size: 18px;
+	width: 370px;
+	height: 50px;
+	text-align: center;
+	line-height: 48px;
+	border-radius: 4px;
+	border: 1px solid #3b4354;
+	cursor: pointer;
+	margin-top: 28px;
+	background-color: #3b4354;
+}

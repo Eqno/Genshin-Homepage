@@ -14,28 +14,10 @@ body {
 	bottom: 0;
 	margin: auto;
 }
-#loading {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: black;
-	opacity: 1;
-	z-index: 3000;
-	transition: all 0.5s;
-}
-
 #fab {
 	position: relative;
 	width: 100%;
 	background: url(../background/main/main.jpg) center top no-repeat;
-}
-#bottom {
-	position: relative;
-	width: 100%;
-	height: 400px;
-	background: black;
 }
 
 #fab header,article,footer {
@@ -359,84 +341,6 @@ body {
 	left: 50%;
 	transform: translateX(-50%);
 	font-size: 20px;
-	color: white;
-}
-
-#bottom .bottom-frame {
-	position: relative;
-	width: 100%;
-	max-width: 1140px;
-	min-width: 800px;
-	height: 400px;
-	left: 50%;
-	transform: translateX(-50%);
-}
-#bottom .logo-frame {
-	position: absolute;
-	width: 420px;
-	height: 100px;
-	top: 150px;
-	left: 80px;
-}
-#bottom .mihoyo {
-	position: absolute;
-	width: 200px;
-	height: 100px;
-	top: 21px;
-	left: 0;
-	background: url(../element/main/bottom/logo.png) center top no-repeat;
-}
-#bottom .line {
-	position: absolute;
-	width: 3px;
-	height: 80px;
-	top: 10px;
-	left: 50%;
-	transform: translateX(-50%);
-	background: gray;
-}
-#bottom .genshin {
-	position: absolute;
-	width: 200px;
-	height: 100px;
-	right: 0;
-	background: url(../element/main/bottom/logo2.png) center top no-repeat;
-}
-#bottom .author {
-	position: absolute;
-	width: 570px;
-	height: 180px;
-	top: 120px;
-	right: 0;
-}
-#bottom .nick-name-chn {
-	position: absolute;
-	width: 300px;
-	height: 125px;
-	top: 13px;
-	background: url(../element/main/bottom/nick-name-chn.png) center top no-repeat;
-}
-#bottom .nick-name-eng {
-	position: absolute;
-	width: 300px;
-	height: 80px;
-	top: 29.5px;
-	left: 265px;
-	background: url(../element/main/bottom/nick-name-eng.png) center top no-repeat;
-}
-#bottom .line2 {
-	position: absolute;
-	width: 399px;
-	height: 2px;
-	top: 78px;
-	left: 118px;
-	background: white;
-}
-#bottom .real-name {
-	position: absolute;
-	top: 110px;
-	left: 176px;
-	font-size: 22px;
 	color: white;
 }
 

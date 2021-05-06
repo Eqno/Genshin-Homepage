@@ -1,0 +1,12 @@
+* {
+	font-family: Helvetica;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background: center top no-repeat;
+	background-size: cover;
+	z-index: 10;
+}
+a {
+	text-decoration: none
+}
