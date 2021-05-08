@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link rel="stylesheet" type="text/css" href="css/os.css">
 	<link rel="stylesheet" type="text/css" href="css/bottom.css">
+	<link rel="stylesheet" type="text/css" href="css/video.css">
 </head>
 <body>
 	<div id="loading"></div>
@@ -25,10 +26,11 @@
 		</audio>
 		<div class="logo"></div>
 		<div class="float_frame">
-			<a href="home.html">HOME</a>
-			<a href="https://genshin.mihoyo.com/en/news">NEWS</a>
-			<a href="https://genshin.mihoyo.com/en/character/mondstadt">CHARACTERS</a>
-			<div class="select explore">
+			<div class="slide-item"></div>
+			<a href="home.html" class="home on">HOME</a>
+			<a href="https://genshin.mihoyo.com/en/news" class="on">NEWS</a>
+			<a href="https://genshin.mihoyo.com/en/character/mondstadt" class="on">CHARACTERS</a>
+			<div class="select explore on">
 				<p>EXPLORE</p>
 				<ul class="expl_menu">
 					<li><a href="https://genshin.mihoyo.com/en/game">ABOUT GAME</a></li>
@@ -37,7 +39,7 @@
 					<li><a href="https://genshin.mihoyo.com/en/manga">MANGA</a></li>
 				</ul>
 			</div>
-			<div class="select more">
+			<div class="select more on">
 				<p>More</p>
 				<ul class="more_menu">
 					<li><a href="https://bbs.mihoyo.com/ys" target="_blank">FORUMS</a></li>
@@ -56,9 +58,27 @@
 		<a href="https://ys-api-os.mihoyo.com/event/download_porter/link/ys_global/genshinimpactpc/default" class="download"></a>
 	</div>
 	<header>
-		<video src="element/os/header/header.mp4" autoplay="autoplay" muted="muted" loop="loop">
-			
-		</video>
+		<video src="element/os/header/header.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
+		<div class="title">
+			<div class="video">
+				<div class="player">
+					<div class="circle"></div>
+					<div class="trangle"></div>
+				</div>
+			</div>
+			<p>Released on Multiple Platforms - Download Now!</p>
+			<div class="download">
+				<a href="https://www.playstation.com/games/genshin-impact" class="dl-link ps"></a>
+				<a href="https://apps.apple.com/app/id1517783697" class="dl-link apple"></a>
+				<a href="https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact" class="dl-link google"></a>
+				<a href="https://ys-api-os.mihoyo.com/event/download_porter/link/ys_global/genshinimpactpc/default" class="dl-link win"></a>
+			</div>
+		</div>
+		<div class="arrow-frame">
+			<div class="arrows arrow1"></div>
+			<div class="arrows arrow2"></div>
+			<div class="arrows arrow3"></div>
+		</div>
 	</header>
 	<article>
 		
@@ -77,9 +97,35 @@
 			</form>
 		</div>
 	</div>
+	<!--videos-->
+	<div class="video-back">
+		<div class="video-frame">
+			<button>关闭</button>
+			<iframe src="about:blank" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+		</div>
+	</div>
+	<!--videos-->
 
 	<script src="js/bar.js" type="text/javascript"></script>
 	<script type="text/javascript">
+		//bar-slide-item
+		$(".float_frame .on").hover(function() {
+			$(".float_frame .slide-item").addClass("on-"+$(this).index());
+		}, function() {
+			$(".float_frame .slide-item").removeClass("on-"+$(this).index());
+		});
+		//bar-slide-item
+
+		//video-button
+		$(".title .player").hover(function() {
+			$(".title .circle").css("opacity", 0);
+			$(".title .trangle").css("background-image", "url(element/os/header/trangle-active.png)");
+		}, function() {
+			$(".title .circle").css("opacity", 1);
+			$(".title .trangle").css("background-image", "url(element/os/header/trangle.png)");
+		});
+		//video-button
+
 	</script>
 </body>
 </html>
