@@ -81,7 +81,50 @@
 		</div>
 	</header>
 	<article>
-		
+		<div class="news">
+			<h3>NEWS</h3>
+			<div class="news-list">
+				<div class="visual">
+					<div class="slide">
+						<a href="https://www.bilibili.com/video/BV13K4y1N7BM?from=search&seid=17349500694279932082" class="p1"></a>
+						<a href="https://www.bilibili.com/video/BV1PV411n7pv?from=search&seid=4605758390938381918" class="p2"></a>
+						<a href="https://webstatic-sea.mihoyo.com/ys/event/e20210428invite/index.html?utm_source=officialweb&utm_medium=news" class="p3"></a>
+						<a href="https://www.bilibili.com/video/BV1nh411m7yr?from=search&seid=14314169370209544689" class="p4"></a>
+					</div>
+					<div class="page-point">
+						<div class="p p-active"></div>
+						<div class="p"></div>
+						<div class="p"></div>
+						<div class="p"></div>
+					</div>
+				</div>
+				<div class="news-content">
+					<ul>
+						<li><a href="https://genshin.mihoyo.com/en/news/detail/12539">
+							<p class="text">Energy Amplifier Top Tips - "Domain of Furious Thunder"</p>
+							<p class="date">May 3, 2021</p>
+						</a></li>
+						<li><a href="https://genshin.mihoyo.com/en/news/detail/12481">
+							<p class="text">Story Teaser: Through the Eyes of a Dragon | Genshin Impact</p>
+							<p class="date">Apr 29, 2021</p>
+						</a></li>
+						<li><a href="https://genshin.mihoyo.com/en/news/detail/12469">
+							<p class="text">Developers Discussion – 4/29</p>
+							<p class="date">Apr 29, 2021</p>
+						</a></li>
+						<li><a href="https://genshin.mihoyo.com/en/news/detail/12467">
+							<p class="text">"Energy Amplifier Initiation" Gameplay Details</p>
+							<p class="date">Apr 29, 2021</p>
+						</a></li>
+						<li><a href="https://genshin.mihoyo.com/en/news/detail/12409">
+							<p class="text">Explanations of Version 1.5 Update Details</p>
+							<p class="date">Apr 28, 2021</p>
+						</a></li>
+					</ul>
+					<a href="https://genshin.mihoyo.com/en/news" class="news-more">More</a>
+				</div>
+			</div>
+		</div>
 	</article>
 	<footer>
 		
@@ -125,6 +168,14 @@
 			$(".title .trangle").css("background-image", "url(element/os/header/trangle.png)");
 		});
 		//video-button
+
+		//news-slide
+		$(".news-list .p").click(function() {
+			$(".news-list .p").removeClass("p-active");
+			$(this).addClass("p-active");
+			$(".news-list .slide").css("transform", "translateX(-"+$(this).index()*640+"px)");
+		});
+		//news-slide
 
 	</script>
 </body>

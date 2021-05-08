@@ -132,38 +132,185 @@ header .arrows {
 	height: 24px;
 	opacity: 0.1;
 	background-image: url(../element/os/header/arrow.png);
+	background-size: auto;
 
-	/* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
-    animation-name: breath;                         /* 动画名称 */
-    animation-duration: 700ms;                         /* 动画时长3秒 */
-    animation-timing-function: ease-in-out;         /* 动画速度曲线：以低速开始和结束 */
-    animation-iteration-count: infinite;            /* 播放次数：无限 */
- 
-    /* Safari and Chrome */
-    -webkit-animation-name: breath;                 /* 动画名称 */
-    -webkit-animation-duration: 700ms;                 /* 动画时长3秒 */
-    -webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
-    -webkit-animation-iteration-count: infinite;    /* 播放次数：无限 */
+	animation-name: arrow;
+	animation-duration: 1.2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
 }
-
-@keyframes breath {
-    from { opacity: 0.1; }                          /* 动画开始时的不透明度 */
-    50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
-    to   { opacity: 0.1; }                          /* 动画结束时的不透明度 */    
-}
- 
-@-webkit-keyframes breath {
-    from { opacity: 0.1; }                          /* 动画开始时的不透明度 */
-    50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
-    to   { opacity: 0.1; }                          /* 动画结束时的不透明度 */
-}
-
-.arrow1 {
+header .arrow1 {
 	top: 0;
+	animation-delay: 0.3s;
 }
-.arrow2 {
+header .arrow2 {
 	top: 12px;
+	animation-delay: 0.6s;
 }
-.arrow3 {
+header .arrow3 {
 	top: 24px;
+	animation-delay: 0.9s;
+}
+@keyframes arrow {
+	from {
+		opacity: 0.2;
+	}
+	50% {
+		opacity: 0.9;
+	}
+	to {
+		opacity: 0.2;
+	}
+}
+article .news {
+	display: flex;
+	flex-direction: column;
+	color: #fff;
+	width: 100%;
+	height: 910px;
+	background-image: url(../element/os/article/news-back.jpg);
+	z-index: 0;
+}
+.news h3 {
+	position: relative;
+	font-size: 50px;
+	font-weight: 400;
+	text-align: center;
+	margin: 183px auto 60px;
+}
+.news h3::before, .news h3::after {
+	position: absolute;
+	content: '';
+	width: 385px;
+	height: 14px;
+	top: 50%;
+	background-image: url(../element/os/article/news-left.png);
+}
+.news h3::before {
+	left: 0;
+	transform: translateY(-50%) translateX(-93%);
+}
+.news h3::after {
+	right: 0;
+	transform: translateY(-50%) translateX(93%) scaleX(-1);
+}
+.news-list {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+.news-list * {
+	position: relative;
+	color: #fff;
+	font-size: 16px;
+}
+.news-list .visual {
+	width: 640px;
+	height: 400px;
+	overflow: hidden;
+	background-color: rgba(38, 18, 12, 0.62);
+}
+.visual .slide {
+	width: 10000px;
+	height: 100%;
+	transform: translateX(0);
+	transition: 0.5s;
+}
+.slide a {
+	float: left;
+	width: 640px;
+	height: 100%;
+}
+.slide .p1 {
+	background-image: url(../element/os/article/p1.jpg);
+}
+.slide .p2 {
+	background-image: url(../element/os/article/p2.jpg);
+}
+.slide .p3 {
+	background-image: url(../element/os/article/p3.jpg);
+}
+.slide .p4 {
+	background-image: url(../element/os/article/p4.jpg);
+}
+.news-list .page-point {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	bottom: 30px;
+	z-index: 1000;
+}
+.page-point .p {
+	width: 18px;
+	height: 18px;
+	margin: 0 4px;
+	cursor: pointer;
+	border-radius: 50%;
+	border: solid 2px rgba(255, 255, 255, 0.3);
+	box-shadow: 0 0 12px 0 rgb(17 17 17 / 30%);	
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.p-active {
+    border: solid 2px #fff !important;
+    background-color: #fff !important;
+}
+.news-list .news-content {
+	display: flex;
+	justify-content: center;
+	width: 640px;
+	background: rgba(38, 18, 12, 0.62);
+}
+.news-list ul {
+	display: flex;
+	flex-direction: column;
+	margin-top: 40px;
+	width: 592px;
+	list-style: none;
+}
+.news-list ul::before {
+	content: "Latest";
+	color: #ffd49f;
+	font-size: 18px;
+	padding: 0 19px 12px; 
+	border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+}
+.news-list li a {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 50px;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+.news-list li .text {
+	width: 480px;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 11px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.news-list li .date {
+	color: rgba(255, 255, 255, 0.35);
+    font-size: 14px;
+}
+.news-content .news-more {
+	position: absolute;
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 18px;
+	height: 22px;
+	right: 33px;
+	bottom: 30px;
+	line-height: 22px;
+	padding-left: 38px;
+	cursor: pointer;
+}
+.news-content .news-more::before {
+	position: absolute;
+	content: '';
+	width: 22px;
+	height: 22px;
+	left: 0;
+	background-image: url(../element/os/article/news-more.png);
+	background-size: contain;
 }
