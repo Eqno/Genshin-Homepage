@@ -54,7 +54,7 @@ header video {
 }
 header .title {
 	width: 827px;
-	top: 470px;
+	top: 640px;
 	left: 50%;
 	transform: translateX(-50%);
 }
@@ -101,12 +101,18 @@ header .title {
 	text-shadow: 0 0 10px rgb(114 71 21 / 68%), 0 0 10px rgb(114 71 21 / 68%);
 	margin: 32px 0 27px 0;
 }
+.title .dl-frame {
+	margin-top: 34px;
+}
 .title .dl-link {
 	float: left;
 	width: 188px;
 	height: 62px;
 	margin-left: 15px;
 	opacity: 0.8;
+}
+.title .dl-link:hover {
+	opacity: 1;
 }
 .title .ps {
 	background-image: url(../element/os/header/dl-ps.png);
@@ -122,6 +128,7 @@ header .title {
 }
 header .arrow-frame {
 	position: absolute;
+	width: 28px;
 	left: 50%;
 	transform: translateX(-50%);
 	bottom: 48px;
@@ -415,15 +422,13 @@ article .city {
 	background-image: url(../element/os/article/liyue.jpg);
 }
 .city .coming {
-	display: block;
+	position: relative;
 	height: 260px;
 	background-image: url(../element/os/article/coming-back.jpg);
 	background-size: cover;
-	cursor: auto;
 	z-index: 999;
 }
 .city .coming::before {
-	display: block;
 	position: absolute;
 	content: '';
 	top: 0;
@@ -434,7 +439,6 @@ article .city {
 	z-index: 1000;
 }
 .city .coming-text {
-	display: inline-block;
 	position: relative;
 	color: #fff;
 	font-size: 36px;
