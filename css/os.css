@@ -314,3 +314,132 @@ article .news {
 	background-image: url(../element/os/article/news-more.png);
 	background-size: contain;
 }
+article .city {
+	width: 100%;
+	height: 780px;
+	z-index: 0;
+}
+.city * {
+	width: 100%;
+}
+.city ul {
+	height: 100%;
+	list-style: none;
+}
+.city ul a {
+	display: block;
+	position: relative;
+	height: 260px;
+	border: none;
+	overflow: hidden;
+}
+.city .border {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	border: #fff solid 6px !important;
+	background-position: calc(50% + 360px) 50%;
+	background-size: contain;
+	opacity: 0;
+	transition: 0.3s;
+	z-index: 1000;
+}
+.city .qin {
+	background-image: url(../element/os/article/qin.png);
+}
+.city .xiao {
+	background-image: url(../element/os/article/xiao.png);
+}
+.city .border-active {
+	opacity: 1;
+}
+.city .back {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	background-size: cover;
+	z-index: 999;
+	transition: 0.3s;
+}
+.city .back::before {
+	display: block;
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	z-index: 1000;
+}
+.city .back-active {
+	height: 105%;
+	top: -3%;
+}
+.city .back-active::before {
+	background-color: rgba(0,0,0,0.2);
+}
+.city .text {
+	display: inline-block;
+	position: relative;
+	color: #fff;
+	font-size: 36px;
+	height: 260px;
+	line-height: 260px;
+	text-align: center;
+	text-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+	z-index: 1001;
+}
+.city .text::after {
+	display: block;
+	position: absolute;
+	content: '';
+	width: 210px;
+	height: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 91px;
+	background-image: url(../element/os/article/p-bottom.png);
+	background-size: 210px 10px;
+	opacity: 0;
+	transition: 0.1s;
+	z-index: 1001;
+}
+.city .text-active::after {
+	opacity: 1;
+}
+.city .mond {
+	background-image: url(../element/os/article/mond.jpg);
+}
+.city .liyue {
+	background-image: url(../element/os/article/liyue.jpg);
+}
+.city .coming {
+	display: block;
+	height: 260px;
+	background-image: url(../element/os/article/coming-back.jpg);
+	background-size: cover;
+	cursor: auto;
+	z-index: 999;
+}
+.city .coming::before {
+	display: block;
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	z-index: 1000;
+}
+.city .coming-text {
+	display: inline-block;
+	position: relative;
+	color: #fff;
+	font-size: 36px;
+	height: 260px;
+	line-height: 260px;
+	text-align: center;
+	z-index: 999;
+}

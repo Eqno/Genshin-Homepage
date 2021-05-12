@@ -125,9 +125,38 @@
 				</div>
 			</div>
 		</div>
+		<div class="city">
+			<ul>
+				<li><a href="https://genshin.mihoyo.com/en/character/mondstadt?char=0">
+					<div class="border qin"></div>
+					<div class="back mond"></div>
+					<p class="text">Mondstadt</p>
+				</a></li>
+				<li><a href="https://genshin.mihoyo.com/en/character/liyue?char=0">
+					<div class="border xiao"></div>
+					<div class="back liyue"></div>
+					<p class="text">Liyue Harbor</p>
+				</a></li>
+				<li><a href="#" class="coming">
+					<p class="coming-text">Coming Soon</p>
+				</a></li>
+			</ul>
+		</div>
 	</article>
-	<footer>
-		
+	<footer id="bottom">
+		<div class="bottom-frame">
+			<div class="logo-frame">
+				<div class="mihoyo"></div>
+				<div class="line"></div>
+				<div class="genshin"></div>
+			</div>
+			<div class="author">
+				<div class="nick-name-chn"></div>
+				<div class="nick-name-eng"></div>
+				<div class="line2"></div>
+				<div class="real-name">计智20H1范若筠&nbsp;&nbsp;&nbsp;作品</div>
+			</div>
+		</div>
 	</footer>
 	<div class="login">
 		<div class="frame">
@@ -151,6 +180,10 @@
 
 	<script src="js/bar.js" type="text/javascript"></script>
 	<script type="text/javascript">
+		function sleep(time){
+			return new Promise((resolve) => setTimeout(resolve, time));
+		}
+
 		//bar-slide-item
 		$(".float_frame .on").hover(function() {
 			$(".float_frame .slide-item").addClass("on-"+$(this).index());
@@ -170,12 +203,51 @@
 		//video-button
 
 		//news-slide
-		$(".news-list .p").click(function() {
+		function newsSlide(index) {
+			$(".news-list .slide").css("transform", "translateX(-"+index*640+"px)");
 			$(".news-list .p").removeClass("p-active");
-			$(this).addClass("p-active");
-			$(".news-list .slide").css("transform", "translateX(-"+$(this).index()*640+"px)");
+			$(".news-list .p").filter(":eq("+index+")").addClass("p-active");
+		}
+		var news_index = 0;
+		function autoSlide() {
+			news_index = (news_index+1)%4;
+			newsSlide(news_index);
+		}
+		var auto_slide = setInterval(autoSlide, 2000);
+		$(".news-list .p").click(async function() {
+			news_index = $(this).index();
+			newsSlide(news_index);
+			clearInterval(auto_slide);
+			await sleep(2000);
+			auto_slide = setInterval(autoSlide, 2000);
 		});
 		//news-slide
+
+		//city
+		$(".city a").hover(function() {
+			$(this).children(".border").addClass("border-active");
+			$(this).children(".back").addClass("back-active");
+			$(this).children(".text").addClass("text-active");
+		}, function() {
+			$(this).children(".border").removeClass("border-active");
+			$(this).children(".back").removeClass("back-active");
+			$(this).children(".text").removeClass("text-active");
+		});
+		//city
+
+		//video-1
+		$(".title .player").click(function(){
+			$(".video-back").addClass("video-active");
+			$(".video-back iframe").attr("src", "https://player.bilibili.com/player.html?aid=83275598&bvid=BV1MJ411H77i&cid=142448942&page=1");
+			$("body").css("overflow", "hidden");
+		});
+		//close
+		$(".video-back button").click(function(){
+			$(".video-back iframe").attr("src", "about:blank");
+			$(".video-back").removeClass("video-active");
+			$("body").css("overflow", "auto");
+		});
+		//videos
 
 	</script>
 </body>
