@@ -332,14 +332,25 @@ body {
 	height: 100px;
 	top: 70px;
 	left: 50%;
-	transform: translateX(-50%);
+}
+#fab footer .last-version .pic {
+	transform: translateX(-100%);
 	background: url(../element/main/g-f/last-version.png) center top no-repeat;
+}
+#fab footer .next-version .pic {
+	transform: translateX(10%);
+	background: url(../element/main/g-f/next-version.png) center top no-repeat;
 }
 #fab footer .desc {
 	position:absolute;
 	top: 150px;
-	left: 50%;
-	transform: translateX(-50%);
 	font-size: 20px;
 	color: white;
+	left: 50%;
+}
+#fab footer .last-version .desc {
+	transform: translateX(-150%);
+}
+#fab footer .next-version .desc {
+	transform: translateX(80%);
 }
