@@ -20,7 +20,7 @@ body {
 	top: 0px;
 	left: 15px;
 	background-color: rgb(105, 224, 255);
-	transition: 0.2s;
+	transition: 0.2s ease-in-out;
 }
 #bar .on-2 {
 	width: 42px;
@@ -31,12 +31,24 @@ body {
 	left: 159px;
 }
 #bar .on-4 {
-	width: 84px;
+	width: 66px;
 	left: 285.5px;
 }
 #bar .on-5 {
-	width: 50px;
+	width: 52px;
 	left: 399.5px;
+}
+#bar .on-6 {
+	width: 60px;
+	left: 399px;
+}
+#bar .on-7 {
+	width: 53px;
+	left: 490px;
+}
+#bar .on-8 {
+	width: 105px;
+	left: 573px;
 }
 header {
 	width: 100%;
@@ -113,6 +125,7 @@ header .title {
 }
 .title .dl-link:hover {
 	opacity: 1;
+	transition: 0.2s;
 }
 .title .ps {
 	background-image: url(../element/os/header/dl-ps.png);
@@ -131,7 +144,7 @@ header .arrow-frame {
 	width: 28px;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: 48px;
+	bottom: 58px;
 }
 header .arrows {
 	position: absolute;
@@ -211,6 +224,9 @@ article .news {
 	color: #fff;
 	font-size: 16px;
 }
+.news-content a:hover {
+	text-shadow: 0 0 3px #fff;
+}
 .news-list .visual {
 	width: 640px;
 	height: 400px;
@@ -221,7 +237,7 @@ article .news {
 	width: 10000px;
 	height: 100%;
 	transform: translateX(0);
-	transition: 0.5s;
+	transition: 0.5s; 
 }
 .slide a {
 	float: left;
