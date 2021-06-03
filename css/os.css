@@ -22,31 +22,31 @@ body {
 	background-color: rgb(105, 224, 255);
 	transition: 0.2s ease-in-out;
 }
-#bar .on-2 {
+#bar .on-1 {
 	width: 42px;
 	left: 87px;
 }
-#bar .on-3 {
+#bar .on-2 {
 	width: 96.5px;
 	left: 159px;
 }
-#bar .on-4 {
+#bar .on-3 {
 	width: 66px;
 	left: 285.5px;
 }
-#bar .on-5 {
+#bar .on-4 {
 	width: 52px;
 	left: 399.5px;
 }
-#bar .on-6 {
+#bar .on-5 {
 	width: 60px;
 	left: 399px;
 }
-#bar .on-7 {
+#bar .on-6 {
 	width: 53px;
 	left: 490px;
 }
-#bar .on-8 {
+#bar .on-7 {
 	width: 105px;
 	left: 573px;
 }
@@ -62,12 +62,14 @@ header video {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	z-index: 0;
+	z-index: 1;
 }
 header .title {
+	overflow: hidden;
 	width: 827px;
 	top: 640px;
 	left: 50%;
+	height: 430px;
 	transform: translateX(-50%);
 }
 .title > * {
@@ -113,10 +115,8 @@ header .title {
 	text-shadow: 0 0 10px rgb(114 71 21 / 68%), 0 0 10px rgb(114 71 21 / 68%);
 	margin: 32px 0 27px 0;
 }
-.title .dl-frame {
-	margin-top: 34px;
-}
 .title .dl-link {
+	top: 0;
 	float: left;
 	width: 188px;
 	height: 62px;
@@ -223,6 +223,9 @@ article .news {
 	position: relative;
 	color: #fff;
 	font-size: 16px;
+}
+.news-content a {
+	transition: 0.2s;
 }
 .news-content a:hover {
 	text-shadow: 0 0 3px #fff;
@@ -463,3 +466,43 @@ article .city {
 	text-align: center;
 	z-index: 999;
 }
+
+.title .dl-link {
+	opacity: 0;
+	animation-name: flow_in_bottom;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+
+	animation-duration: 0.8s;
+}
+.title .ps {
+	animation-delay: 0.3s;
+}
+.title .apple {
+	animation-delay: 0.5s;
+}
+.title .google {
+	animation-delay: 0.7s;
+}
+.title .win {
+	animation-delay: 0.9s;
+}
+.title {
+	opacity: 0;
+	animation-name: flow_in_bottom;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-delay: 0.3s;
+	animation-duration: 0.8s;
+}
+@keyframes flow_in_bottom {
+	from {
+		top: 500px;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+

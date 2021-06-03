@@ -5,7 +5,17 @@
 	right: 0;
 	bottom: 0;
 	background: black;
+	animation-name: loading;
 	opacity: 1;
 	z-index: 3000;
-	transition: 0.5s;
+	animation-delay: 0.2s;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+@keyframes loading {
+	to {
+		opacity: 0;
+		z-index: 0;
+	}
 }

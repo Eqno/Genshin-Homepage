@@ -124,3 +124,54 @@
 	background-image: url(../element/download/bar/download.png);
 	background-size: auto;
 }
+
+
+#bar .music, #bar .logo, #bar .float_frame {
+	opacity: 0;
+	animation-name: flow_in_left;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+#bar .music {
+	animation-delay: 0.5s;
+	animation-duration: 0.8s;
+}
+#bar .logo {
+	animation-delay: 0.5s;
+	animation-duration: 0.8s;
+}
+#bar .float_frame {
+	animation-delay: 0.3s;
+	animation-duration: 1s;
+}
+@keyframes flow_in_left {
+	from {
+		left: -500px;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+#bar .log_in, #bar .download {
+	opacity: 0;
+	animation-name: flow_in_right;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+#bar .log_in {
+	animation-delay: 0.3s;
+	animation-duration: 1s;
+}
+#bar .download {
+	animation-delay: 0.5s;
+	animation-duration: 0.8s;
+}
+@keyframes flow_in_right {
+	from {
+		right: -500px;
+	}
+	to {
+		opacity: 1;
+	}
+}
