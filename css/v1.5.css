@@ -87,6 +87,29 @@ body {
 	background: url(../element/v1.5/head/header-title.png) center top no-repeat;
 }
 
+#fab header .bars, #fab header .logo, #fab header .video, #fab header .title {
+	opacity: 0;
+	animation-name: unfold;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards; 
+}
+#fab header .bars, #fab header .logo, #fab header .title {
+	animation-delay: 0.5s;
+	animation-duration: 1s;
+}
+#fab header .video {
+	animation-delay: 0.2s;
+	animation-duration: 0.8s;
+}
+@keyframes unfold {
+	from {
+		width: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
 #fab article .c-i,.v-i,.g-f {
 	position: relative;
 	width: 100%;
@@ -139,7 +162,12 @@ body {
 	cursor: pointer;
 	z-index: 1000;
 	background-size: cover;
+	transition: 0.3s;
 }
+.c-i .desc-frame .video:hover {
+	transform: scaleX(1.05) scaleY(1.05);
+}
+
 .c-i .desc-frame .view-more { 
 	position: relative;
 	top: 145px;
@@ -302,6 +330,7 @@ body {
 	top: 475px;
 	cursor: pointer;
 	background: url(../element/v1.5/g-f/nxt.png);
+	transition: 0.3s;
 }
 .g-f .slide-button-left {
 	left: 435px;
@@ -310,6 +339,13 @@ body {
 .g-f .slide-button-right {
 	right: 435px;
 }
+.g-f .slide-button-left:hover {
+	transform: rotateY(180deg) translateX(10%);
+}
+.g-f .slide-button-right:hover {
+	transform: translateX(10%);
+}
+
 
 .g-f .point-frame {
 	position: absolute;

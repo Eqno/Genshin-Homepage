@@ -23,13 +23,40 @@ header .title {
 	justify-content: center;
 	align-items: center;
 	/**/
-	width: 100%;
 	height: 243px;
 	left: 50%;
 	bottom: 60px;
 	transform: translateX(-50%);
 	background-image: url(../element/download/header/title-back.png);
 }
+
+header .title {
+	width: 0;
+	animation-name: unfold;
+	animation-delay: 0.5s;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards; 
+}
+@keyframes unfold {
+	to {
+		width: 100%;
+	}
+}
+header .title * {
+	opacity: 0;
+	animation-name: show;
+	animation-delay: 0.8s;
+	animation-duration: 0.8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards; 
+}
+@keyframes show {
+	to {
+		opacity: 1;
+	}
+}
+
 header .qr-code {
 	width: 127px;
 	height: 145px;
@@ -173,6 +200,12 @@ article .title {
 	text-align: center;
 	cursor: pointer;
 	transition: 0.3s;
+}
+.SR li p {
+	transition: 0.3s;
+}
+.SR li:hover p {
+	transform: translateY(-20%);
 }
 .SR li::after {
 	position: absolute;

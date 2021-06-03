@@ -169,7 +169,8 @@
 		$(".page-point").hover(function() {
 			$(this).css("background-image", "url(element/v1.5/g-f/p2.png)");
 		}, function() {
-			$(this).css("background-image", "url(element/v1.5/g-f/p1.png)");
+			$(".page-point").css("background-image", "url(element/v1.5/g-f/p1.png)");
+			$(".page-point").filter(":eq("+index+")").css("background-image", "url(element/v1.5/g-f/p2.png)");
 		});
 		//point-hover
 	</script>
