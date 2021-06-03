@@ -47,11 +47,10 @@ body {
 	height: 52px;
 	top: 56px;
 	opacity: 0.7;
-	transition: all 0.3s;
-	background: center top no-repeat;	
+	background: center top no-repeat;
 }
 #fab header .bars:hover {
-	opacity: 1;
+	opacity: 1 !important;
 }
 #fab header .bar1 {
 	right: 276px;
@@ -81,9 +80,17 @@ body {
 	background: url(../element/main/head/header-title.png) center top no-repeat;
 }
 
-#fab header .bars, #fab header .logo, #fab header .video, #fab header .title {
+#fab header .logo, #fab header .video, #fab header .title {
 	opacity: 0;
 	animation-name: unfold;
+	animation-delay: 0.5s;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards; 
+}
+#fab header .bars {
+	opacity: 0;
+	animation-name: unfold_ex;
 	animation-delay: 0.5s;
 	animation-duration: 1s;
 	animation-iteration-count: 1;
@@ -95,6 +102,14 @@ body {
 	}
 	to {
 		opacity: 1;
+	}
+}
+@keyframes unfold_ex {
+	from {
+		width: 0;
+	}
+	to {
+		opacity: 0.7;
 	}
 }
 

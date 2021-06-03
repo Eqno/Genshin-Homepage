@@ -16,6 +16,14 @@ header {
 	z-index: 0;
 	background-image: url(../background/download/main.jpg);
 }
+header .back {
+	position: absolute;
+	height: 243px;
+	left: 50%;
+	bottom: 60px;
+	transform: translateX(-50%);
+	background-image: url(../element/download/header/title-back.png);
+}
 header .title {
 	position: absolute;
 	/*使子div上下左右居中*/
@@ -23,14 +31,50 @@ header .title {
 	justify-content: center;
 	align-items: center;
 	/**/
-	height: 243px;
 	left: 50%;
-	bottom: 60px;
+	bottom: 110px;
+	transform: translateX(-28%);
+	transition: 1s;
+}
+header .title-active {
+	left: 50%;
 	transform: translateX(-50%);
-	background-image: url(../element/download/header/title-back.png);
+}
+header .qr-code {
+	position: absolute;
+	bottom: 109.5px;
+	left: 50%;
+	transform: translateX(-210%);
+	width: 127px;
+	height: 145px;
+	background-image: url(../element/download/header/qr-code.png);
+	transition: 1s;
+	z-index: 2999;
+	cursor: pointer;
+}
+header .qr-active {
+	height: 343px;
+	width: 300px;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 330px;
+}
+header .mask {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	opacity: 0;
+	z-index: 50;
+	transition: 1s;
+}
+header .mask-active {
+	opacity: 0.5;
 }
 
-header .title {
+header .back {
 	width: 0;
 	animation-name: unfold;
 	animation-delay: 0.5s;
@@ -43,7 +87,7 @@ header .title {
 		width: 100%;
 	}
 }
-header .title * {
+header .title *, header .qr-code {
 	opacity: 0;
 	animation-name: show;
 	animation-delay: 0.8s;
@@ -57,14 +101,15 @@ header .title * {
 	}
 }
 
-header .qr-code {
-	width: 127px;
-	height: 145px;
-	margin-right: 20px;
-	background-image: url(../element/download/header/qr-code.png);
-}
 header .dl-list {
 	display: block;
+}
+.dl-list a {
+	transition: 0.3s;
+}
+.dl-list a:hover {
+	box-shadow: 2px 2px 2px black;
+	transform: translateX(-2px) translateY(-2px);
 }
 .dl-list .up {
 	display: flex;
