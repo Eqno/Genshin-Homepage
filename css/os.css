@@ -67,7 +67,7 @@ header video {
 header .title {
 	overflow: hidden;
 	width: 827px;
-	top: 640px;
+	top: 60%;
 	left: 50%;
 	height: 430px;
 	transform: translateX(-50%);
@@ -94,6 +94,7 @@ header .title {
 	cursor: pointer;
 }
 .title .circle {
+	display: block;
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
@@ -106,6 +107,12 @@ header .title {
 	height: 28px;
 	z-index: 1001;
 	background-image: url(../element/os/header/trangle.png);
+}
+.title .player:hover div1 {
+	opacity: 0;
+}
+.title .player:hover div2 {
+	background-image: url(../element/os/header/trangle-active.png);
 }
 .title p {
 	color: #fff;
@@ -125,8 +132,8 @@ header .title {
 }
 .title .dl-link:hover {
 	opacity: 1;
-	transition: 0.2s;
 }
+
 .title .ps {
 	background-image: url(../element/os/header/dl-ps.png);
 }
@@ -140,7 +147,6 @@ header .title {
 	background-image: url(../element/os/header/dl-win.png);
 }
 header .arrow-frame {
-	position: absolute;
 	width: 28px;
 	left: 50%;
 	transform: translateX(-50%);
@@ -376,9 +382,6 @@ article .city {
 .city .xiao {
 	background-image: url(../element/os/article/xiao.png);
 }
-.city .border-active {
-	opacity: 1;
-}
 .city .back {
 	position: absolute;
 	height: 100%;
@@ -397,13 +400,6 @@ article .city {
 	height: 100%;
 	background-color: rgba(0,0,0,0.4);
 	z-index: 1000;
-}
-.city .back-active {
-	height: 105%;
-	top: -3%;
-}
-.city .back-active::before {
-	background-color: rgba(0,0,0,0.2);
 }
 .city .text {
 	display: inline-block;
@@ -430,9 +426,6 @@ article .city {
 	opacity: 0;
 	transition: 0.1s;
 	z-index: 1001;
-}
-.city .text-active::after {
-	opacity: 1;
 }
 .city .mond {
 	background-image: url(../element/os/article/mond.jpg);
@@ -466,9 +459,22 @@ article .city {
 	text-align: center;
 	z-index: 999;
 }
+.city a:hover div1 {
+	opacity: 1;
+}
+.city a:hover div2 {
+	height: 105%;
+	top: -3%;
+}
+.city a:hover div2::before {
+	background-color: rgba(0,0,0,0.2);
+}
+.city a:hover p::after {
+	opacity: 1;
+}
 
 .title .dl-link {
-	opacity: 0;
+	filter: opacity(0);
 	animation-name: flow_in_bottom;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
@@ -488,7 +494,7 @@ article .city {
 	animation-delay: 0.9s;
 }
 .title {
-	opacity: 0;
+	filter: opacity(0);
 	animation-name: flow_in_bottom;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
@@ -500,7 +506,7 @@ article .city {
 		top: 500px;
 	}
 	to {
-		opacity: 1;
+		filter: opacity(1);
 	}
 }
 

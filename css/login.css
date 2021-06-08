@@ -1,16 +1,20 @@
 .login {
-	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	background: rgba(0, 0, 0, 0.6);
-	z-index: 2910;
+	transition: 0.3s;
+	opacity: 0;
+	z-index: -1;
+}
+.login-active {
+	opacity: 1;
+	z-index: 15000;
 }
 .login * {
 	position: absolute;
-	z-index: 2911;
 }
 .login .frame {
 	width: 450px;

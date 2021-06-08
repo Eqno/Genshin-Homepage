@@ -39,38 +39,11 @@ $(window).scroll(function(event){
 });
 //scroll
 
-//menu
-$(".select").hover(function() {
-	$(this).children("ul").addClass("show_menu");
-}, function() {
-	$(this).children("ul").removeClass("show_menu");
-});
-//menu
-
-//more
-$(function() {
-	check_more($("body").width());
-});
-function check_more(width) {
-	if (width > 1340) {
-		$(".more").css("display", "none");
-		$(".in_more").css("display", "block");
-	}
-	else {
-		$(".in_more").css("display", "none");
-		$(".more").css("display", "block");
-	}
-}
-$(window).resize(function() {
-	check_more($("body").width());
-});
-//more
-
 //login
 $(".log_in").click(function() {
-	$(".login").show();
+	$(".login").addClass("login-active");
 });
 $(".close").click(function() {
-	$(".login").hide();
+	$(".login").removeClass("login-active");
 });
 //login

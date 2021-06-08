@@ -33,6 +33,7 @@ header .title {
 	/**/
 	left: 50%;
 	bottom: 110px;
+	z-index: 2989;
 	transform: translateX(-28%);
 	transition: 1s;
 }
@@ -49,7 +50,7 @@ header .qr-code {
 	height: 145px;
 	background-image: url(../element/download/header/qr-code.png);
 	transition: 1s;
-	z-index: 2999;
+	z-index: 2989;
 	cursor: pointer;
 }
 header .qr-active {

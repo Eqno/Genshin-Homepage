@@ -61,8 +61,8 @@
 		<div class="title">
 			<div class="video">
 				<div class="player">
-					<div class="circle"></div>
-					<div class="trangle"></div>
+					<div1 class="circle"></div1>
+					<div2 class="trangle"></div2>
 				</div>
 			</div>
 			<p>Released on Multiple Platforms - Download Now!</p>
@@ -125,13 +125,13 @@
 		<div class="city">
 			<ul>
 				<li><a href="https://genshin.mihoyo.com/en/character/mondstadt?char=0">
-					<div class="border qin"></div>
-					<div class="back mond"></div>
+					<div1 class="border qin"></div1>
+					<div2 class="back mond"></div2>
 					<p class="text">Mondstadt</p>
 				</a></li>
 				<li><a href="https://genshin.mihoyo.com/en/character/liyue?char=0">
-					<div class="border xiao"></div>
-					<div class="back liyue"></div>
+					<div1 class="border xiao"></div1>
+					<div2 class="back liyue"></div2>
 					<p class="text">Liyue Harbor</p>
 				</a></li>
 				<li><div class="coming">
@@ -189,16 +189,6 @@
 		});
 		//bar-slide-item
 
-		//video-button
-		$(".title .player").hover(function() {
-			$(".title .circle").css("opacity", 0);
-			$(".title .trangle").css("background-image", "url(element/os/header/trangle-active.png)");
-		}, function() {
-			$(".title .circle").css("opacity", 1);
-			$(".title .trangle").css("background-image", "url(element/os/header/trangle.png)");
-		});
-		//video-button
-
 		//news-slide
 		function newsSlide(index) {
 			$(".news-list .slide").css("transform", "translateX(-"+index*640+"px)");
@@ -219,18 +209,6 @@
 			auto_slide = setInterval(autoSlide, 2000);
 		});
 		//news-slide
-
-		//city
-		$(".city a").hover(function() {
-			$(this).children(".border").addClass("border-active");
-			$(this).children(".back").addClass("back-active");
-			$(this).children(".text").addClass("text-active");
-		}, function() {
-			$(this).children(".border").removeClass("border-active");
-			$(this).children(".back").removeClass("back-active");
-			$(this).children(".text").removeClass("text-active");
-		});
-		//city
 
 		//video-1
 		$(".title .player").click(function(){

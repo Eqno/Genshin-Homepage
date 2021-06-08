@@ -77,9 +77,9 @@
 	background-color: #272626;
     transition: 0.3s;
 }
-#bar .show_menu {
-	opacity: 0.96;
-	pointer-events: auto;
+.select:hover ul {
+	opacity: 0.96 !important;
+	pointer-events: auto !important;
 }
 #bar li a {
 	display: block;
@@ -153,25 +153,42 @@
 	}
 }
 
-#bar .log_in, #bar .download {
-	opacity: 0;
+#bar .download, #bar .log_in {
+	filter: opacity(0);
 	animation-name: flow_in_right;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
 }
-#bar .log_in {
-	animation-delay: 0.3s;
-	animation-duration: 1s;
-}
 #bar .download {
 	animation-delay: 0.5s;
 	animation-duration: 0.8s;
+}
+#bar .log_in {
+	animation-delay: 0.3s;
+	animation-duration: 1s;
 }
 @keyframes flow_in_right {
 	from {
 		right: -500px;
 	}
 	to {
-		opacity: 1;
+		filter: opacity(1);
+	}
+}
+
+@media screen and (min-width: 1341px) {
+	.more {
+		display: none;
+	}
+	.in_more {
+		display: block;
+	}
+}
+@media screen and (max-width: 1340px) {
+	.more {
+		display: block;
+	}
+	.in_more {
+		display: none;
 	}
 }
