@@ -201,11 +201,10 @@
 			newsSlide(news_index);
 		}
 		var auto_slide = setInterval(autoSlide, 2000);
-		$(".news-list .p").click(async function() {
+		$(".news-list .p").click(function() {
+			clearInterval(auto_slide);
 			news_index = $(this).index();
 			newsSlide(news_index);
-			clearInterval(auto_slide);
-			await sleep(2000);
 			auto_slide = setInterval(autoSlide, 2000);
 		});
 		//news-slide
